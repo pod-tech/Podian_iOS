@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'PODPhotographer' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'Alamofire'#, '~> 5.2'
+  pod 'AlamofireNetworkActivityLogger'
+  pod 'SwiftyJSON'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'NotificationBannerSwift', '2.0.1'
+  pod 'SCLAlertView'
+  #pod 'Firebase/Analytics'
+  #pod 'Firebase/Messaging'
+pod 'Firebase/Analytics', '~> 5.1.0'
+pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+
+
+
+  # Pods for PODPhotographer
+  
+end

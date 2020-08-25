@@ -1,0 +1,6 @@
+framework module Pods_PODPhotographer {
+  umbrella header "Pods-PODPhotographer-umbrella.h"
+
+  export *
+  module * { export * }
+}
