@@ -30,7 +30,7 @@ class Constant{
     public static var getCustomerProfileURL:String = Constant.serverURL+"/getPhotographerProfileByPhotographerId";
     public static var getHelpInfoURL:String = Constant.serverURL+"/get247SupportSettings";
     
-   
+    public static var getAppVersionURL:String = Constant.serverURL+"/GetAppVersion/2";
      public static var gatePageURL:String = Constant.serverURL+"/getpage/";
     
      public static var extendOrderRequestURL:String = Constant.serverURL+"/extendOrderRequest"

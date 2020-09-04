@@ -154,9 +154,6 @@ class OrderDetailTableViewCell: UITableViewCell {
             }
         }
        
-        
-       
-        
         if let  ShootingDate = dic["ShootingDate"]{
             lblDate.text = "Date: \(ShootingDate)";
             lblDate.halfTextColorChange(fullText:lblDate.text!, changeText: ShootingDate as! String, color: UIColor.init(red: 19/255, green: 57/255, blue: 145/255, alpha: 1))
