@@ -262,7 +262,13 @@ class OrderDetailTableViewCell: UITableViewCell {
         
         if let  CheckFlg = dic["CheckFlg"]{
             if(CheckFlg as! String == "No"){
-                (vc as! OrderDetailViewController).viewOptions.isHidden = false;
+                if let  DisplayCheckList = dic["DisplayCheckList"]{
+                    if(DisplayCheckList as! String == "Yes"){
+                        (vc as! OrderDetailViewController).viewOptions.isHidden = false;
+                    } else {
+                        (vc as! OrderDetailViewController).viewOptions.isHidden = true;
+                    }
+                }
             }
             else{
                 (vc as! OrderDetailViewController).viewOptions.isHidden = true;

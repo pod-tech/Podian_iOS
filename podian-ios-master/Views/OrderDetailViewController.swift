@@ -54,6 +54,7 @@ class OrderDetailViewController: UIViewController {
     func SetOptions(){
         listOptionDic.removeAll()
         listOptions.removeAll()
+        
         listOptionDic["Camera lens"] = false
         listOptionDic["Battery"] = false
         listOptionDic["External"] = false
@@ -153,7 +154,7 @@ extension OrderDetailViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView==tblOrders){
+        if(tableView == tblOrders){
             if( OrderController.listOrderDetails != nil){
                 if( OrderController.listOrderDetails!.count>0){
                     tableView.restore()

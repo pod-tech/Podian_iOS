@@ -9,12 +9,14 @@
 import UIKit
 
 class ExtendPopupViewController: UIViewController {
+    
     @IBOutlet var lbltitle:UILabel!
     @IBOutlet var btnAccept:UIButton!
     @IBOutlet var btnReject:UIButton?
     @IBOutlet var viewPopup:UIView!
     public var dicObj:[String:AnyObject]!
     public var vc:OrderDetailViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
