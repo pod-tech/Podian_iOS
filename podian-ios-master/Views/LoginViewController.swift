@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 import NotificationBannerSwift
+
 class LoginViewController: UIViewController,GIDSignInDelegate {
     @IBOutlet var txtEmail:UITextField!
     @IBOutlet var txtPassword:UITextField!

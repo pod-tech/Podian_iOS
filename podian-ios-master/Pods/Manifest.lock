@@ -56,6 +56,9 @@ PODS:
   - NotificationBannerSwift (2.0.1):
     - MarqueeLabel/Swift (~> 3.2.0)
     - SnapKit (~> 4.2.0)
+  - NVActivityIndicatorView (5.0.1):
+    - NVActivityIndicatorView/Base (= 5.0.1)
+  - NVActivityIndicatorView/Base (5.0.1)
   - Protobuf (3.13.0)
   - SCLAlertView (0.8)
   - SkyFloatingLabelTextField (3.8.0)
@@ -71,6 +74,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - NotificationBannerSwift (= 2.0.1)
+  - NVActivityIndicatorView
   - SCLAlertView
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
@@ -92,6 +96,7 @@ SPEC REPOS:
     - MarqueeLabel
     - nanopb
     - NotificationBannerSwift
+    - NVActivityIndicatorView
     - Protobuf
     - SCLAlertView
     - SkyFloatingLabelTextField
@@ -114,12 +119,13 @@ SPEC CHECKSUMS:
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NotificationBannerSwift: 007774aa590cc9680647b92b2f217bef5c00c32c
+  NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: ffe94e601f5c2b05e927ce3c75bb0d508803785e
+PODFILE CHECKSUM: 63066a0acac3a993856df135212af1a588a41028
 
 COCOAPODS: 1.9.1

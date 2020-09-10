@@ -18,6 +18,10 @@ class OrderByTimeViewController: UIViewController,UITableViewDataSource,UITableV
     
         override func viewDidLoad() {
            super.viewDidLoad()
+            
+            tblOrder.estimatedRowHeight = 100
+                  tblOrder.rowHeight = UITableView.automaticDimension
+            
            self.tblOrder.isHidden = true;
            if #available(iOS 13.0, *) {
                 overrideUserInterfaceStyle = .light
@@ -67,12 +71,6 @@ class OrderByTimeViewController: UIViewController,UITableViewDataSource,UITableV
     }
 
     extension OrderByTimeViewController {
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
-            cell.SetData(dic: OrderController.listByTimeOrders![indexPath.row] as [String : AnyObject])
-            return cell;
-        }
-        
         func numberOfSections(in tableView: UITableView) -> Int {
             1
         }
@@ -92,6 +90,18 @@ class OrderByTimeViewController: UIViewController,UITableViewDataSource,UITableV
                 return 0;
             }
         }
+        
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+               return UITableView.automaticDimension
+           }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
+            cell.SetData(dic: OrderController.listByTimeOrders![indexPath.row] as [String : AnyObject])
+            return cell;
+        }
+        
+        
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
              let dic =  OrderController.listByTimeOrders![indexPath.row] as [String : AnyObject]
