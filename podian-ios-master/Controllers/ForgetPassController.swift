@@ -10,11 +10,11 @@ import UIKit
 import  NotificationBannerSwift
 class ForgetPassController: NSObject {
 
-    static func ForgetPasswordSendOTP(vc:UIViewController,dicObj:[String:AnyObject]!){
+    static func ForgetPasswordSendOTP(vc:ForgetPasswordViewController,dicObj:[String:AnyObject]!){
         do{
             
             try
-                vc.showSpinner(onView: vc.view)
+                vc.showSpinner()
                 ApiManager.sharedInstance.requestPOSTURL(Constant.forgetPassOTPURL, params: dicObj, success: {
                 (JSON) in
                 let msg =  JSON.dictionary?["Message"]!
@@ -32,23 +32,23 @@ class ForgetPassController: NSObject {
                    
                     
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure: { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
     
-    static func ForgetPasswordReSendOTP(vc:UIViewController,dicObj:[String:AnyObject]!){
+    static func ForgetPasswordReSendOTP(vc:ResetPasswordViewController,dicObj:[String:AnyObject]!){
         do{
             
             try
-                vc.showSpinner(onView: vc.view)
+                vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTURL(Constant.forgetPasswordResend, params: dicObj, success: {
                 (JSON) in
                 let msg =  JSON.dictionary?["Message"]!
@@ -58,23 +58,23 @@ class ForgetPassController: NSObject {
                 else{
                     Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure: { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
     
-    static func ResetPasswordSubmit(vc:UIViewController,dicObj:[String:AnyObject]!){
+    static func ResetPasswordSubmit(vc:ResetPasswordViewController,dicObj:[String:AnyObject]!){
         do{
             
             try
-                vc.showSpinner(onView: vc.view)
+                vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTURL(Constant.ResetPasswordSubMitURL, params: dicObj, success: {
                 (JSON) in
                 let msg =  JSON.dictionary?["Message"]!
@@ -88,23 +88,23 @@ class ForgetPassController: NSObject {
                     Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                   
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure: { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
     
-    static func ChangePassword(vc:UIViewController,dicObj:[String:AnyObject]!){
+    static func ChangePassword(vc:ProfileResetPasswordViewController,dicObj:[String:AnyObject]!){
         do{
             
             try
-                vc.showSpinner(onView: vc.view)
+                vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTURL(Constant.ChangedPasswordURL, params: dicObj, success: {
                 (JSON) in
                 let msg =  JSON.dictionary?["Message"]!
@@ -119,15 +119,15 @@ class ForgetPassController: NSObject {
                 else{
                     Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure: { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
     

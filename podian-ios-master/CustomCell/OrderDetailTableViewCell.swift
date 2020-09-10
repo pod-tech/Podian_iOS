@@ -40,7 +40,7 @@ class OrderDetailTableViewCell: UITableViewCell {
     @IBOutlet var widthExtend:NSLayoutConstraint!
     public var indexPath:IndexPath?;
     public var dicObj:[String:AnyObject]?;
-    public var vc:UIViewController?
+    public var vc:OrderDetailViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -82,7 +82,7 @@ class OrderDetailTableViewCell: UITableViewCell {
     
     @IBAction func btnExtendClick(sender:UIButton){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ExtendPopupViewController") as! ExtendPopupViewController
+        let controller : ExtendPopupViewController = storyboard.instantiateViewController(withIdentifier: "ExtendPopupViewController") as! ExtendPopupViewController
         controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .crossDissolve
         controller.dicObj = dicObj!;

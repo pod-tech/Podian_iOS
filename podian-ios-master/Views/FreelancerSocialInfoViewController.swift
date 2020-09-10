@@ -9,7 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 import NotificationBannerSwift
-class FreelancerSocialInfoViewController: UIViewController {
+
+class FreelancerSocialInfoViewController: BaseViewController {
     @IBOutlet var txtInstaURL:SkyFloatingLabelTextField!
     @IBOutlet var txyProtURL:SkyFloatingLabelTextField!
     @IBOutlet var txtBody:SkyFloatingLabelTextField!

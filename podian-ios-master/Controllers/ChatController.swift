@@ -15,7 +15,7 @@ class ChatController: NSObject {
                try
                    listChat = [[String:Any]]()
                    //vc.tblChat?.reloadData()
-                   vc.showSpinner(onView: vc.view)
+                   vc.showSpinner()
                 ApiManager.sharedInstance.requestGETURL("\(Constant.getMessageURL)/\(senderID)/\(receiverID)/\(OrderID)", success: { (JSON) in
                    let msg =  JSON.dictionary?["Message"]
                    if((JSON.dictionary?["IsSuccess"]) != false){
@@ -26,7 +26,7 @@ class ChatController: NSObject {
                    else{
                        //Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                    }
-                   vc.removeSpinner(onView: vc.view)
+                   vc.removeSpinner()
                    vc.tblChat?.reloadData()
                      vc.refreshControl.endRefreshing()
                     DispatchQueue.main.async {
@@ -37,7 +37,7 @@ class ChatController: NSObject {
                     }
                }) { (Error) in
                    Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                   vc.removeSpinner(onView: vc.view)
+                   vc.removeSpinner()
                  vc.refreshControl.endRefreshing()
                }
                
@@ -59,7 +59,7 @@ class ChatController: NSObject {
                 else{
                     //Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
                 vc.tblChat?.reloadData()
                   vc.refreshControl.endRefreshing()
                  DispatchQueue.main.async {
@@ -70,7 +70,7 @@ class ChatController: NSObject {
                  }
             }) { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
               vc.refreshControl.endRefreshing()
             }
             
@@ -86,7 +86,8 @@ class ChatController: NSObject {
     
     static func SendMessage(vc:ChatViewController,dicObj:[String:AnyObject]){
         do{
-            vc.showSpinner(onView: vc.view); ApiManager.sharedInstance.requestPOSTURL(Constant.SendMessageURL,  params: dicObj, success: { (JSON) in
+            vc.showSpinner()
+            ApiManager.sharedInstance.requestPOSTURL(Constant.SendMessageURL,  params: dicObj, success: { (JSON) in
                 
                 let msg =  JSON.dictionary?["Message"]
                 if((JSON.dictionary?["IsSuccess"]) != false){
@@ -95,15 +96,15 @@ class ChatController: NSObject {
                 else{
                     Helper.ShowAlertMessage(message:(msg?.rawString())! , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure:{ (Error) in
                 Helper.ShowAlertMessage(message:Error.localizedDescription , vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
 }

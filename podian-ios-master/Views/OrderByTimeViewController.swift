@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderByTimeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class OrderByTimeViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
 
         @IBOutlet var tblOrder:UITableView!
         @IBOutlet var lblTitle:UILabel!

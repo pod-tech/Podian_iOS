@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-class BookingDetailAddressViewController: UIViewController {
+class BookingDetailAddressViewController: BaseViewController {
 
     @IBOutlet var lblAdd:UILabel!
     @IBOutlet var mapView:MKMapView!

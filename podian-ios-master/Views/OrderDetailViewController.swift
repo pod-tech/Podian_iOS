@@ -8,7 +8,8 @@
 
 import UIKit
 
-class OrderDetailViewController: UIViewController {
+
+class OrderDetailViewController: BaseViewController {
     
     @IBOutlet var btnUpcoming:UIButton!
     @IBOutlet var btnComplete:UIButton!

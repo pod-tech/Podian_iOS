@@ -59,9 +59,6 @@ class SplashViewController: UIViewController {
     }
     
     func getAppVersionApi(){
-          //        do{
-          //            try
-          //                vc.showSpinner(onView: vc.view)
           ApiManager.sharedInstance.requestGETURL(Constant.getAppVersionURL, success: { (JSON) in
               
               //                let msg =  JSON.dictionary?["Message"]

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExtendPopupViewController: UIViewController {
+class ExtendPopupViewController: BaseViewController {
     
     @IBOutlet var lbltitle:UILabel!
     @IBOutlet var btnAccept:UIButton!

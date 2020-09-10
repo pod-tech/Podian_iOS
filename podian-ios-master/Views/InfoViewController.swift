@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: BaseViewController {
 
     @IBOutlet var lblTitle:UILabel!
     @IBOutlet var txtView:UITextView!

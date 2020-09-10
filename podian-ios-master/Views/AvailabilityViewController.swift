@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationBannerSwift
-class AvailabilityViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class AvailabilityViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var btnAddAvail:UIButton!
     @IBOutlet var btnYourAvail:UIButton!

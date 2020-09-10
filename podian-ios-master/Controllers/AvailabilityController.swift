@@ -87,9 +87,11 @@ class AvailabilityController: NSObject {
     }
     
 
-    static func AddAvailabilty(vc:UIViewController,dicObj:[String:AnyObject]){
+    static func AddAvailabilty(vc:AvailabilityViewController,dicObj:[String:AnyObject]){
         do{
-            vc.showSpinner(onView: vc.view); ApiManager.sharedInstance.requestPOSTURL(Constant.addavailibilityURL, params: dicObj,success: { (JSON) in
+            
+            vc.showSpinner()
+            ApiManager.sharedInstance.requestPOSTURL(Constant.addavailibilityURL, params: dicObj,success: { (JSON) in
                 let msg =  (JSON.dictionaryObject?["Message"] as! String)
                
                 if((JSON.dictionary?["IsSuccess"]) != false){
@@ -105,15 +107,15 @@ class AvailabilityController: NSObject {
                                        }
                     Helper.ShowAlertMessageWithHandlesr(message:msg , vc: vc,action:callActionHandler)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             }, failure:{ (Error) in
                 Helper.ShowAlertMessage(message:Error.localizedDescription , vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
             })
         }
         catch let error{
             Helper.ShowAlertMessage(message: error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-            vc.removeSpinner(onView: vc.view)
+            vc.removeSpinner()
         }
     }
     
@@ -146,7 +148,7 @@ class AvailabilityController: NSObject {
             try
                 userAvailabilityList = [[String:AnyObject]]()
                 vc.tblYourAvail.reloadData()
-                vc.showSpinner(onView: vc.view)
+                vc.showSpinner()
                 ApiManager.sharedInstance.requestGETURL("\(Constant.getAvailibilityURL)\(photographerID)", success: { (JSON) in
                 let msg =  JSON.dictionary?["Message"]
                 if((JSON.dictionary?["IsSuccess"]) != false){
@@ -156,12 +158,12 @@ class AvailabilityController: NSObject {
                 else{
                     Helper.ShowAlertMessage(message:msg!.description , vc: vc,title:"Failed",bannerStyle: BannerStyle.danger)
                 }
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
                 vc.tblYourAvail.reloadData()
                 vc.refreshControl.endRefreshing()
             }) { (Error) in
                 Helper.ShowAlertMessage(message: Error.localizedDescription, vc: vc,title:"Error",bannerStyle: BannerStyle.danger)
-                vc.removeSpinner(onView: vc.view)
+                vc.removeSpinner()
                 vc.refreshControl.endRefreshing()
             }
             

@@ -9,7 +9,9 @@
 import UIKit
 import SkyFloatingLabelTextField
 import NotificationBannerSwift
-class FreelancerPersonalInfoViewController: UIViewController {
+
+class FreelancerPersonalInfoViewController: BaseViewController {
+    
     @IBOutlet var profileImg:UIImageView!
     @IBOutlet var txtfullName:SkyFloatingLabelTextField!
     @IBOutlet var txtEmail:SkyFloatingLabelTextField!

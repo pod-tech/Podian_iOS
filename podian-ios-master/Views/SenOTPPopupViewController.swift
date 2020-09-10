@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationBannerSwift
-class SenOTPPopupViewController: UIViewController {
+class SenOTPPopupViewController: BaseViewController {
 
     @IBOutlet var txtOTP:UITextField!
     public var dicObj:[String:AnyObject] = [:]

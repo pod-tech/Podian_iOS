@@ -9,7 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 import NotificationBannerSwift
-class ProfileViewController: UIViewController {
+
+class ProfileViewController: BaseViewController {
 
     @IBOutlet var profileImg:UIImageView!
     @IBOutlet var txtfullName:SkyFloatingLabelTextField!
@@ -136,7 +137,7 @@ class ProfileViewController: UIViewController {
                otpDic["Name"] = txtfullName.text as AnyObject
                otpDic["Address"] = txtAddress.text as AnyObject
               otpDic["Phone"] = txtPhoneNo.text as AnyObject
-        LoginController.UpdateUserProfile(vc: self, dicObj: otpDic)
+        ProfileController.UpdateUserProfile(vc: self, dicObj: otpDic)
     }
     
 }

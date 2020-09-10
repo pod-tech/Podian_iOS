@@ -8,7 +8,8 @@
 
 import UIKit
 import NotificationBannerSwift
-class FreelancerWorkInfoViewController: UIViewController {
+
+class FreelancerWorkInfoViewController: BaseViewController {
 
     @IBOutlet var tblPractive:UITableView!
     @IBOutlet var btn6to1:UIButton!

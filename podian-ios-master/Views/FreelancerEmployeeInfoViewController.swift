@@ -9,7 +9,9 @@
 import UIKit
 import SkyFloatingLabelTextField
 import NotificationBannerSwift
-class FreelancerEmployeeInfoViewController: UIViewController {
+
+class FreelancerEmployeeInfoViewController: BaseViewController {
+    
     @IBOutlet var btnScreenshot:UIButton!
     @IBOutlet var txtArea:SkyFloatingLabelTextField!
     @IBOutlet var txtCity:SkyFloatingLabelTextField!

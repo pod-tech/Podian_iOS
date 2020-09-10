@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationBannerSwift
-class FreelancerSubmitInfoViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+class FreelancerSubmitInfoViewController: BaseViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
     var pickerView = UIPickerView()
     var pickerViewJoinAS = UIPickerView()

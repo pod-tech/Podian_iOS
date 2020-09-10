@@ -4,6 +4,9 @@
 target 'PODPhotographer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
+  # Pods for PODPhotographer
+  
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Alamofire'#, '~> 5.2'
   pod 'AlamofireNetworkActivityLogger'
@@ -12,15 +15,8 @@ target 'PODPhotographer' do
   pod 'FacebookLogin'
   pod 'NotificationBannerSwift', '2.0.1'
   pod 'SCLAlertView'
-  #pod 'Firebase/Analytics'
-  #pod 'Firebase/Messaging'
-pod 'Firebase/Analytics', '~> 5.1.0'
-pod 'Firebase/Core'
+  pod 'Firebase/Analytics', '~> 5.1.0'
+  pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-  pod 'NVActivityIndicatorView'
-
-
-
-  # Pods for PODPhotographer
   
 end

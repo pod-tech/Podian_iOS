@@ -8,7 +8,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
+    
     @IBOutlet var lblNotificationCount:UILabel!
      let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
     
