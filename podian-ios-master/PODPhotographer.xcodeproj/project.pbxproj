@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1813F12624D0A0280090E1FD /* NotificationSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1813F12524D0A0280090E1FD /* NotificationSound.caf */; };
 		182C62B32414C669006C6DDD /* OrderByTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182C62B22414C669006C6DDD /* OrderByTimeViewController.swift */; };
+		183FB5F7250B89B800E2196F /* ExportOrdersPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FB5F6250B89B800E2196F /* ExportOrdersPopup.swift */; };
 		183FCD8023CDD79A00AA6F86 /* PracticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FCD7F23CDD79A00AA6F86 /* PracticeCell.swift */; };
 		183FCD8223CDD97200AA6F86 /* FreelancerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FCD8123CDD97200AA6F86 /* FreelancerController.swift */; };
 		184417B923B146950055FBBE /* OrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184417B823B146950055FBBE /* OrderDetailTableViewCell.swift */; };
@@ -117,6 +118,7 @@
 		10ABD3AAA057F82B53B422B0 /* Pods_PODPhotographer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PODPhotographer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1813F12524D0A0280090E1FD /* NotificationSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotificationSound.caf; sourceTree = "<group>"; };
 		182C62B22414C669006C6DDD /* OrderByTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderByTimeViewController.swift; sourceTree = "<group>"; };
+		183FB5F6250B89B800E2196F /* ExportOrdersPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportOrdersPopup.swift; sourceTree = "<group>"; };
 		183FCD7F23CDD79A00AA6F86 /* PracticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCell.swift; sourceTree = "<group>"; };
 		183FCD8123CDD97200AA6F86 /* FreelancerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerController.swift; sourceTree = "<group>"; };
 		184417B823B146950055FBBE /* OrderDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				185B70C223CCF53C00C12F6C /* FreelancerSubmitInfoViewController.swift */,
 				184F098123E569C700B6B5C0 /* OrdersViewController.swift */,
 				182C62B22414C669006C6DDD /* OrderByTimeViewController.swift */,
+				183FB5F6250B89B800E2196F /* ExportOrdersPopup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				185772E2250A12E4000B81DC /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				185772FE250A12E4000B81DC /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				185B70BF23CCF50500C12F6C /* FreelancerWorkInfoViewController.swift in Sources */,
+				183FB5F7250B89B800E2196F /* ExportOrdersPopup.swift in Sources */,
 				18526367239D2AA9005BF2DA /* SplashViewController.swift in Sources */,
 				187731DC23BF96BB002FE60B /* ChatViewController.swift in Sources */,
 				188C326523B7D5E800C85820 /* InfoController.swift in Sources */,

@@ -15,6 +15,7 @@ class OrdersViewController: BaseViewController {
     @IBOutlet var viewOrders:UIView!
     public let refreshControl = UIRefreshControl()
     @IBOutlet var tblOrder:UITableView!
+    @IBOutlet weak var completedOrderView: UIView!
     let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
     
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class OrdersViewController: BaseViewController {
        self.btnUpcoming.isSelected = true;
        self.btnComplete.isSelected = false;
        self.tblOrder.isHidden = true;
+        self.completedOrderView.isHidden = true
        self.viewOrders.isHidden = false;
        if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
@@ -61,10 +63,12 @@ class OrdersViewController: BaseViewController {
           if(sender == btnUpcoming){
               //OrderController.FilterData(index: 1);
             self.tblOrder.isHidden = true;
+              self.completedOrderView.isHidden = true
             self.viewOrders.isHidden = false;
           }
           else{
             self.tblOrder.isHidden = false;
+              self.completedOrderView.isHidden = false
             self.viewOrders.isHidden = true;
             OrderController.FilterData(index: 2);
           }
@@ -72,9 +76,23 @@ class OrdersViewController: BaseViewController {
           self.tblOrder.reloadData()
       }
     
+    @IBAction func exportClicked(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+              let controller : ExportOrdersPopup = storyboard.instantiateViewController(withIdentifier: "ExportOrdersPopup") as! ExportOrdersPopup
+              controller.modalPresentationStyle = .overCurrentContext
+              controller.modalTransitionStyle = .crossDissolve
+             
+        if let Id = userInfo!["Id"]{
+            
+            controller.userId = Id as! String
+        }
+        
+        self.present(controller, animated: true, completion: nil)
+    }
     @IBAction func TimeSelectedbAction(sender:UIButton){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                      let controller = storyboard.instantiateViewController(withIdentifier: "OrderByTimeViewController") as! OrderByTimeViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "OrderByTimeViewController") as! OrderByTimeViewController
         controller.type = sender.tag; Helper.rootNavigation?.pushViewController(controller, animated: true)
     }
 }

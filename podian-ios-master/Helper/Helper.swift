@@ -13,7 +13,10 @@ import SCLAlertView
 class Constant{
     public static var APIKey:String = "123456789123456789"
     //private static var serverURL:String = "https://projects.seawindsolution.com/YOGDEV/POD/Webservices"
-     private static var serverURL:String = "https://www.podahmedabad.com/Webservices"
+    
+    
+     private static var serverURL:String = "https://www.podahmedabad.com/test/Webservices"//"https://www.podahmedabad.com/Webservices"
+    
     public static var loginUrl:String = Constant.serverURL+"/photographerLogin";
     public static var signUpUrl:String = Constant.serverURL+"/photographerRegistration";
    
@@ -55,7 +58,8 @@ class Constant{
      public static var getWeekOrderByPhotohrapherIdURL:String = Constant.serverURL+"/getWeekOrderByPhotohrapherId/"
     public static var deleteAllNotification:String = Constant.serverURL+"/clearAllPhotographerNotificationByphotographerId/";
      public static var checkListURL:String = Constant.serverURL+"/checklist"
-    
+    public static var exportOrdersURL:String = Constant.serverURL+"/export_All_Orders_Of_Photographer"
+
     public static var currLat: Double = 0.0
     public static var currLng: Double = 0.0
     public static var deviceToken: String = ""
