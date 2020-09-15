@@ -18,7 +18,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet var txtPhoneNo:SkyFloatingLabelTextField!
     @IBOutlet var txtAddress:SkyFloatingLabelTextField!
     @IBOutlet var lblPhotGrapherID:UILabel!
-    @IBOutlet var sv:UIScrollView!
+//    @IBOutlet var sv:UIScrollView!
     @IBOutlet var btnSubmit:UIButton!
     @IBOutlet var activityInd:UIActivityIndicatorView!
     var imagePicker: ImagePicker!
@@ -35,7 +35,7 @@ class ProfileViewController: BaseViewController {
         self.SetStatusBarColor()
         self.imagePicker = ImagePicker(presentationController: self,delegate: self)
         profileImg.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ProfileViewController.ShowImagePicker)))
-        sv.contentSize = CGSize.init(width: 0, height: btnSubmit.frame.origin.y+btnSubmit.frame.size.height)
+//        sv.contentSize = CGSize.init(width: 0, height: btnSubmit.frame.origin.y+btnSubmit.frame.size.height)
         txtEmail.isUserInteractionEnabled = false
         txtPhoneNo.isUserInteractionEnabled = false;
         self.btnSubmit.isEnabled = false;
