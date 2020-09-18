@@ -1687,7 +1687,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph7-p1-2Az">
-                                                                    <rect key="frame" x="10" y="8" width="25" height="35"/>
+                                                                    <rect key="frame" x="10" y="8" width="35" height="35"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="35" id="Gtv-ft-CX0"/>
@@ -2319,7 +2319,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="260" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-zC-E4d">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="260" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-zC-E4d">
                                 <rect key="frame" x="0.0" y="196" width="320" height="352"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2389,7 +2389,7 @@
                                                                     <state key="normal" title="  Select All" image="uncheck">
                                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     </state>
-                                                                    <state key="selected" title="Select All" image="check"/>
+                                                                    <state key="selected" title="  Select All" image="check"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
                                                                             <real key="value" value="5"/>
@@ -2548,13 +2548,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf1-ud-guc">
-                                                            <rect key="frame" x="10" y="10" width="37" height="24"/>
+                                                            <rect key="frame" x="10" y="10" width="46.5" height="24"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text=" 2019-12-11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWi-0a-Jud">
-                                                            <rect key="frame" x="57" y="7" width="110" height="30"/>
+                                                            <rect key="frame" x="66.5" y="7" width="120" height="30"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="I8J-lv-eco"/>
@@ -4221,7 +4221,7 @@
                                         <rect key="frame" x="8" y="8" width="304" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalBG" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-9w-26z">
-                                                <rect key="frame" x="0.0" y="0.0" width="304.00000000000023" height="70.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TodayCal" translatesAutoresizingMaskIntoConstraints="NO" id="gd0-eM-BF1">
                                                 <rect key="frame" x="25" y="11" width="66" height="48"/>
@@ -4265,7 +4265,7 @@
                                         <rect key="frame" x="8" y="84" width="304" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalBG" translatesAutoresizingMaskIntoConstraints="NO" id="tym-Ir-ji0">
-                                                <rect key="frame" x="0.0" y="0.0" width="304.00000000000023" height="70.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TomorrowCal" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-6l-GXh">
                                                 <rect key="frame" x="25" y="11" width="66" height="48"/>
@@ -4309,7 +4309,7 @@
                                         <rect key="frame" x="8" y="160" width="304" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalBG" translatesAutoresizingMaskIntoConstraints="NO" id="bPW-2H-VYw">
-                                                <rect key="frame" x="0.0" y="0.0" width="304.00000000000023" height="70.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeeklyCal" translatesAutoresizingMaskIntoConstraints="NO" id="eV9-9f-9q7">
                                                 <rect key="frame" x="25" y="11" width="66" height="48"/>
@@ -4353,7 +4353,7 @@
                                         <rect key="frame" x="8" y="236" width="304" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalBG" translatesAutoresizingMaskIntoConstraints="NO" id="zW3-co-gSA">
-                                                <rect key="frame" x="0.0" y="0.0" width="304.00000000000023" height="70.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpcomingCal" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-8T-E9g">
                                                 <rect key="frame" x="25" y="11" width="66" height="48"/>
@@ -5213,7 +5213,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJH-Di-dfw">
-                                                            <rect key="frame" x="3" y="13" width="25" height="33"/>
+                                                            <rect key="frame" x="3" y="13" width="42" height="33"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="33" id="YWn-gW-j3K"/>
                                                                 <constraint firstAttribute="width" constant="42" id="gUE-RS-i9S"/>
@@ -5981,7 +5981,7 @@
                                         <rect key="frame" x="0.0" y="28" width="302" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oct-up-OeC" id="RSc-pl-YvD">
-                                            <rect key="frame" x="0.0" y="2" width="302" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="302" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXw-L9-pSx">
