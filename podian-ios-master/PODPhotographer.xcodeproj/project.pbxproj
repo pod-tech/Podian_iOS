@@ -103,9 +103,6 @@
 		18A53AB423B4F3DD0018078B /* ForgetPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A53AB323B4F3DD0018078B /* ForgetPassController.swift */; };
 		18A53AB623B4F4A50018078B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A53AB523B4F4A50018078B /* ResetPasswordViewController.swift */; };
 		18B4E5AC23B4D80D0001A3FA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E5AB23B4D80C0001A3FA /* LoginController.swift */; };
-		18B4E5AF23B4DAF60001A3FA /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B4E5AD23B4DAF60001A3FA /* GoogleSignIn.framework */; };
-		18B4E5B023B4DAF60001A3FA /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B4E5AE23B4DAF60001A3FA /* GoogleSignInDependencies.framework */; };
-		18B4E5B223B4DB030001A3FA /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E5B123B4DB020001A3FA /* GoogleSignIn.bundle */; };
 		18B4E5B423B4E26F0001A3FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E5B323B4E26F0001A3FA /* GoogleService-Info.plist */; };
 		18B4E5B623B4E32B0001A3FA /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E5B523B4E32B0001A3FA /* SignupController.swift */; };
 		18C357C923B9EA82004B5A43 /* SenOTPPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C357C823B9EA82004B5A43 /* SenOTPPopupViewController.swift */; };
@@ -219,9 +216,6 @@
 		18A53AB323B4F3DD0018078B /* ForgetPassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPassController.swift; sourceTree = "<group>"; };
 		18A53AB523B4F4A50018078B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		18B4E5AB23B4D80C0001A3FA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		18B4E5AD23B4DAF60001A3FA /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
-		18B4E5AE23B4DAF60001A3FA /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
-		18B4E5B123B4DB020001A3FA /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		18B4E5B323B4E26F0001A3FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18B4E5B523B4E32B0001A3FA /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		18C357C823B9EA82004B5A43 /* SenOTPPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenOTPPopupViewController.swift; sourceTree = "<group>"; };
@@ -236,8 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1893C12B24C5802A007B8FF2 /* AVFoundation.framework in Frameworks */,
-				18B4E5AF23B4DAF60001A3FA /* GoogleSignIn.framework in Frameworks */,
-				18B4E5B023B4DAF60001A3FA /* GoogleSignInDependencies.framework in Frameworks */,
 				EC1352938E098B39FE899375 /* Pods_PODPhotographer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +400,6 @@
 			children = (
 				1813F12524D0A0280090E1FD /* NotificationSound.caf */,
 				18B4E5B323B4E26F0001A3FA /* GoogleService-Info.plist */,
-				18B4E5B123B4DB020001A3FA /* GoogleSignIn.bundle */,
 				184DE154239D0379009389F1 /* Views */,
 				184DE153239D0372009389F1 /* Helper */,
 				184DE152239D0364009389F1 /* Models */,
@@ -452,8 +443,6 @@
 			isa = PBXGroup;
 			children = (
 				1893C12A24C5802A007B8FF2 /* AVFoundation.framework */,
-				18B4E5AD23B4DAF60001A3FA /* GoogleSignIn.framework */,
-				18B4E5AE23B4DAF60001A3FA /* GoogleSignInDependencies.framework */,
 				10ABD3AAA057F82B53B422B0 /* Pods_PODPhotographer.framework */,
 			);
 			name = Frameworks;
@@ -528,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B4E5B223B4DB030001A3FA /* GoogleSignIn.bundle in Resources */,
 				18E4EBC223BB5B25007251F6 /* Main.storyboard in Resources */,
 				189FA6D723904C7E008EBD79 /* LaunchScreen.storyboard in Resources */,
 				18B4E5B423B4E26F0001A3FA /* GoogleService-Info.plist in Resources */,
@@ -840,7 +828,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seawindsolution.PODPhotographer;
 				PRODUCT_MODULE_NAME = PODPhotographer;
 				PRODUCT_NAME = Podian;
@@ -871,7 +859,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seawindsolution.PODPhotographer;
 				PRODUCT_MODULE_NAME = PODPhotographer;
 				PRODUCT_NAME = Podian;

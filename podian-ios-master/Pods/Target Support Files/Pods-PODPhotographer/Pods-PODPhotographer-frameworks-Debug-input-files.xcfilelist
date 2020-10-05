@@ -2,10 +2,6 @@ ${PODS_ROOT}/Target Support Files/Pods-PODPhotographer/Pods-PODPhotographer-fram
 ${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework
-${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
-${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
-${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework
-${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework
 ${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework
 ${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework
 ${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework

@@ -9,8 +9,8 @@
 import UIKit
 import CoreLocation
 import Firebase
-import FacebookCore
-import GoogleSignIn
+//import FacebookCore
+//import GoogleSignIn
 import AVFoundation
 import AlamofireNetworkActivityLogger
 
@@ -20,13 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate,
     var locationManager:CLLocationManager!
     var window : UIWindow?
     var player: AVAudioPlayer?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         NetworkActivityLogger.shared.startLogging()
         NetworkActivityLogger.shared.level = .debug
         
         self.determineMyCurrentLocation();
-        GIDSignIn.sharedInstance().clientID = "44495372592-01t6ohop7crfo4ivqehe1vp2svg6s36q.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance().clientID = "44495372592-01t6ohop7crfo4ivqehe1vp2svg6s36q.apps.googleusercontent.com"
         
         FirebaseApp.configure()
         if #available(iOS 10.0, *) {

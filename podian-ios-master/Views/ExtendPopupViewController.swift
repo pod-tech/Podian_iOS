@@ -29,7 +29,6 @@ class ExtendPopupViewController: BaseViewController {
             btnReject!.frame = CGRect.init(x: 10, y: btnReject!.frame.origin.y, width: viewPopup.frame.size.width-20, height: 41)
             self.lbltitle.text = "Sorry, you can't accept this session because you can't available";
         }
-
     }
     
     @IBAction func btnClose(){

@@ -18,7 +18,7 @@ class OrderDetailTableViewCell: UITableViewCell {
     @IBOutlet var lblTotalHrs:UILabel!
     @IBOutlet var lblEndTime:UILabel!
     @IBOutlet var lblShootType:UILabel!
-//    @IBOutlet var txtLocation:UITextView!
+    //    @IBOutlet var txtLocation:UITextView!
     @IBOutlet var btnSubmitOTP:UIButton!
     @IBOutlet var btnCall:UIButton!
     @IBOutlet var lblExtendHrs:UILabel!
@@ -36,15 +36,14 @@ class OrderDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet var heightCallView:NSLayoutConstraint!
     @IBOutlet var heightAddTitle:NSLayoutConstraint!
-//    @IBOutlet var heightAdd:NSLayoutConstraint!
     @IBOutlet var widthExtend:NSLayoutConstraint!
     public var indexPath:IndexPath?;
     public var dicObj:[String:AnyObject]?;
-    public var vc:OrderDetailViewController?
+    public var vc = OrderDetailViewController()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        txtLocation.contentOffset = .zero
+        //        txtLocation.contentOffset = .zero
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -62,7 +61,7 @@ class OrderDetailTableViewCell: UITableViewCell {
         controller.lat = lat;
         controller.lng = lng;
         controller.add = (dicObj!["ShootingAddress"] as! String)
-        vc?.navigationController!.pushViewController(controller, animated: true)
+        vc.navigationController!.pushViewController(controller, animated: true)
     }
     
     @IBAction func SendOTP(sender:UIButton){
@@ -71,12 +70,11 @@ class OrderDetailTableViewCell: UITableViewCell {
             dic["OrderId"] = dicObj!["Id"];
             dic["PhotographerId"] = dicObj!["PhotographerId"];
             dic["CustomerId"] = dicObj!["CustomerId"];
-            OrderController.SendOrderOTPtoCustomer(vc: vc!, dicObj: dic as [String : AnyObject])
-        }
-        else{
+            OrderController.SendOrderOTPtoCustomer(vc: vc, dicObj: dic as [String : AnyObject])
+        } else{
             var dic:[String:Any] = [String:AnyObject]();
             dic["OrderId"] = dicObj!["Id"];
-            OrderController.CompleteOrder(vc: vc!, dicObj: dic as [String : AnyObject])
+            OrderController.CompleteOrder(vc: vc, dicObj: dic as [String : AnyObject])
         }
     }
     
@@ -86,15 +84,15 @@ class OrderDetailTableViewCell: UITableViewCell {
         controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .crossDissolve
         controller.dicObj = dicObj!;
-        controller.vc = (vc as! OrderDetailViewController);
-        vc!.present(controller, animated: true, completion: nil)
+        controller.vc = vc
+        vc.present(controller, animated: true, completion: nil)
     }
     
     @IBAction func btnChatClick(sender:UIButton){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         controller.dicObj = dicObj!;
-        vc!.navigationController?.pushViewController(controller, animated: true)
+        vc.navigationController?.pushViewController(controller, animated: true)
     }
     
     func SetData(dic:[String:AnyObject]){
@@ -108,41 +106,40 @@ class OrderDetailTableViewCell: UITableViewCell {
             
         }
         
-     
         
         if let  DisplayFlg = dic["DisplayFlg"]{
             if((DisplayFlg as! String) == "Yes"){
                 self.viewCall.isHidden = false;
                 self.heightCallView.constant = 42
+                heightAddTitle.constant = 18
                 self.btnLocation.isHidden = false
                 self.btnChat.isHidden = false
                 if let  Address = dic["ShootingAddress"]{
-                    lblAddress.text = Address as? String;
+                    lblAddress.text = Address as? String
                     lblAddress.textColor = UIColor.init(red: 19/255, green: 57/255, blue: 145/255, alpha: 1)
                 }
                 
                 if let  meetPoint = dic["ShootingMeetPoint"]{
-                    lblMeeting!.text = "Meeting Point: \(meetPoint)";
+                    lblMeeting!.text = "Meeting Point: \(meetPoint)"
                     lblMeeting!.halfTextColorChange(fullText:lblMeeting!.text, changeText: meetPoint as! String, color: UIColor.init(red: 19/255, green: 57/255, blue: 145/255, alpha: 1))
                 }
             } else{
                 self.viewCall.isHidden = true;
                 self.heightCallView.constant = 0
                 self.btnLocation.isHidden = true
-                //                self.heightAdd.constant = 0;
                 lblAddress.text = ""
                 lblMeeting.text = ""
-                self.heightAddTitle.constant = 0;
-                self.btnChat.isHidden = true
+                heightAddTitle.constant = 0
+                btnChat.isHidden = true
                 
             }
         }
         if let  ExtReqFlg = dic["ExtReqFlg"]{
             if((ExtReqFlg as! String) == "Yes"){
-                self.btnExtend.isHidden = false;
+                self.btnExtend.isHidden = false
             }
             else{
-                self.btnExtend.isHidden = true;
+                self.btnExtend.isHidden = true
             }
         }
         if let  ExtAvlFlg = dic["ExtAvlFlg"]{
@@ -153,7 +150,7 @@ class OrderDetailTableViewCell: UITableViewCell {
                 
             }
         }
-       
+        
         if let  ShootingDate = dic["ShootingDate"]{
             lblDate.text = "Date: \(ShootingDate)";
             lblDate.halfTextColorChange(fullText:lblDate.text!, changeText: ShootingDate as! String, color: UIColor.init(red: 19/255, green: 57/255, blue: 145/255, alpha: 1))
@@ -192,7 +189,7 @@ class OrderDetailTableViewCell: UITableViewCell {
         }
         if let  ExtAddress = dic["ExtAddress"]{
             if(ExtAddress as! String != "0"){
-                lblAddress.text = ExtAddress as! String;
+                lblAddress.text = ExtAddress as? String;
             }
             
         }
@@ -210,15 +207,14 @@ class OrderDetailTableViewCell: UITableViewCell {
                 self.lblRemainingTime.isHidden = false;
                 self.heightConstaintRemainingTIme.constant = 20;
                 self.btnSubmitOTP.setTitle("Complete Shooting", for: UIControl.State.normal)
-                self.btnSubmitOTP.tag = 5;
+                self.btnSubmitOTP.tag = 5
                 if let  ExtStatus = dic["ExtStatus"]{
                     if(ExtStatus as! String == "1"){
                         self.btnExtend.isHidden = false;
                         self.widthExtend.constant = 50;
                     }
                 }
-            }
-            else{
+            } else{
                 self.lblRemainingTime.isHidden = true;
                 self.heightConstaintRemainingTIme.constant = 0;
                 if(status as! String == "6"){
@@ -228,9 +224,7 @@ class OrderDetailTableViewCell: UITableViewCell {
                     self.btnLocation.isHidden = true;
                     self.btnFullCall.isHidden = false
                     self.btnChat.isHidden = true;
-                }
-                    
-                else  if(status as! String == "2" || status as! String == "5"){
+                } else if(status as! String == "2" || status as! String == "5"){
                     if let  ExtStatus = dic["ExtStatus"]{
                         if(ExtStatus as! String == "1"){
                             self.btnExtend.isHidden = false;
@@ -264,14 +258,14 @@ class OrderDetailTableViewCell: UITableViewCell {
             if(CheckFlg as! String == "No"){
                 if let  DisplayCheckList = dic["DisplayCheckList"]{
                     if(DisplayCheckList as! String == "Yes"){
-                        (vc as! OrderDetailViewController).viewOptions.isHidden = false;
+                        vc.viewOptions.isHidden = false;
                     } else {
-                        (vc as! OrderDetailViewController).viewOptions.isHidden = true;
+                        vc.viewOptions.isHidden = true;
                     }
                 }
             }
             else{
-                (vc as! OrderDetailViewController).viewOptions.isHidden = true;
+                vc.viewOptions.isHidden = true;
             }
         }
         

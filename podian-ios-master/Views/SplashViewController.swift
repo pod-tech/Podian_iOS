@@ -68,11 +68,18 @@ class SplashViewController: UIViewController {
                   let dict : [String : Any] = response![0]
                   
                   self.iPhoneVersion = dict["viphone"] as! String
-                  if(Double(self.appVersion)! < Double(self.iPhoneVersion)!){
-                      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.showUpdateAppView), userInfo: nil, repeats:  false)
-                  } else {
-                      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.MoveToLogin), userInfo: nil, repeats:  false)
-                  }
+                
+                if(self.appVersion != self.iPhoneVersion){
+                    Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.showUpdateAppView), userInfo: nil, repeats:  false)
+                } else {
+                     Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.MoveToLogin), userInfo: nil, repeats:  false)
+                }
+                
+//                  if(Double(self.appVersion)! < Double(self.iPhoneVersion)!){
+//                      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.showUpdateAppView), userInfo: nil, repeats:  false)
+//                  } else {
+//                      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(SplashViewController.MoveToLogin), userInfo: nil, repeats:  false)
+//                  }
                   
               } else{
                   

@@ -3,22 +3,6 @@ PODS:
   - Alamofire (5.0.5)
   - AlamofireNetworkActivityLogger (3.0.0):
     - Alamofire (~> 5.0.0-rc.2)
-  - FacebookCore (0.9.0):
-    - FBSDKCoreKit (~> 5.0)
-  - FacebookLogin (0.9.0):
-    - FacebookCore (~> 0.9.0)
-    - FBSDKCoreKit (~> 5.0)
-    - FBSDKLoginKit (~> 5.0)
-  - FBSDKCoreKit (5.15.1):
-    - FBSDKCoreKit/Basics (= 5.15.1)
-    - FBSDKCoreKit/Core (= 5.15.1)
-  - FBSDKCoreKit/Basics (5.15.1)
-  - FBSDKCoreKit/Core (5.15.1):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.15.1):
-    - FBSDKLoginKit/Login (= 5.15.1)
-  - FBSDKLoginKit/Login (5.15.1):
-    - FBSDKCoreKit (~> 5.0)
   - Firebase/Analytics (5.1.0):
     - Firebase/Core
   - Firebase/Core (5.1.0):
@@ -68,8 +52,6 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Alamofire
   - AlamofireNetworkActivityLogger
-  - FacebookCore
-  - FacebookLogin
   - Firebase/Analytics (~> 5.1.0)
   - Firebase/Core
   - Firebase/Messaging
@@ -84,10 +66,6 @@ SPEC REPOS:
     - ActionSheetPicker-3.0
     - Alamofire
     - AlamofireNetworkActivityLogger
-    - FacebookCore
-    - FacebookLogin
-    - FBSDKCoreKit
-    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -108,10 +86,6 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 6d79f6f3b98e2b21d218dd65a39f634ff37a27e5
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   AlamofireNetworkActivityLogger: 94e8a7d454a4a9800cef1d0c1d3699754493684b
-  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
-  FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
-  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
-  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
   Firebase: e08fb0795f35707aeb1d8a715c731c45bdf6fd56
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseCore: b81044df1044c0857a0737c6324678b72d4f7f00
@@ -128,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: c80b781c43fbe22bfecc5c8116e0f91496bed519
+PODFILE CHECKSUM: 29aea3a049f9171412f5f410e952e1fa5a9bfdae
 
 COCOAPODS: 1.9.1

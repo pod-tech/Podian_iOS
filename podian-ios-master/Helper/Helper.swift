@@ -15,7 +15,7 @@ class Constant{
     //private static var serverURL:String = "https://projects.seawindsolution.com/YOGDEV/POD/Webservices"
     
     
-     private static var serverURL:String = "https://www.podahmedabad.com/test/Webservices"//"https://www.podahmedabad.com/Webservices"
+     private static var serverURL:String = "https://www.podahmedabad.com/Webservices"//"https://www.podahmedabad.com/test/Webservices"
     
     public static var loginUrl:String = Constant.serverURL+"/photographerLogin";
     public static var signUpUrl:String = Constant.serverURL+"/photographerRegistration";
