@@ -10,7 +10,7 @@ import UIKit
 import NotificationBannerSwift
 class FreelancerController: NSObject {
     
-    static func GetPracticeList(vc:FreelancerWorkInfoViewController)-> [[String:AnyObject]]{
+    static func GetPracticeList(vc:FreelancerWorkInfoViewController)-> [[String:Any]]{
         var listPracticeValue = [String]()
         listPracticeValue.append("Couple Photography")
         listPracticeValue.append("Body Photography(New Born-Syrs)")
@@ -23,11 +23,11 @@ class FreelancerController: NSObject {
         listPracticeValue.append("Potrait Photography")
         listPracticeValue.append("Candids")
         
-        var listPractice = [[String:AnyObject]]();
+        var listPractice = [[String:Any]]()
         for val in listPracticeValue {
-            var obj = [String:AnyObject]()
-            obj["Title"] = val as AnyObject;
-            obj["IsSelected"] = false as AnyObject;
+            var obj = [String:Any]()
+            obj["Title"] = val 
+            obj["IsSelected"] = false
             listPractice.append(obj)
         }
         
@@ -49,7 +49,7 @@ class FreelancerController: NSObject {
         listJoinUs?.append("ALL OTHER")
     }
     
-    static func FreelancerRegistration(vc:FreelancerSubmitInfoViewController,dicObj:[String:AnyObject]){
+    static func FreelancerRegistration(vc:FreelancerSubmitInfoViewController,dicObj:[String:Any]){
         do{
             vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTFreelancerMultiPartURL(endUrl: Constant.JoinFreeLancerURL, imageData: dicObj["ProfileImage"] as! Data,cardData:dicObj["IdProof"] as! Data , parameters: dicObj, success: { (JSON) in

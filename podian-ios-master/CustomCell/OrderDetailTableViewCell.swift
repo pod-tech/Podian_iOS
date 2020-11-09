@@ -38,7 +38,7 @@ class OrderDetailTableViewCell: UITableViewCell {
     @IBOutlet var heightAddTitle:NSLayoutConstraint!
     @IBOutlet var widthExtend:NSLayoutConstraint!
     public var indexPath:IndexPath?;
-    public var dicObj:[String:AnyObject]?;
+    public var dicObj:[String:Any]?;
     public var vc = OrderDetailViewController()
     
     override func awakeFromNib() {
@@ -56,25 +56,25 @@ class OrderDetailTableViewCell: UITableViewCell {
         
         let latitude = dicObj!["ShootingLat"]
         let longitude = dicObj?["ShootingLng"]
-        let lat = Double(((latitude?.description)!))!
-        let lng = Double(((longitude?.description)!))!
-        controller.lat = lat;
-        controller.lng = lng;
+        let lat = Double((((latitude as AnyObject).description)!))!
+        let lng = Double((((longitude as AnyObject).description)!))!
+        controller.lat = lat
+        controller.lng = lng
         controller.add = (dicObj!["ShootingAddress"] as! String)
         vc.navigationController!.pushViewController(controller, animated: true)
     }
     
     @IBAction func SendOTP(sender:UIButton){
         if(sender.tag != 5){
-            var dic:[String:Any] = [String:AnyObject]();
-            dic["OrderId"] = dicObj!["Id"];
-            dic["PhotographerId"] = dicObj!["PhotographerId"];
-            dic["CustomerId"] = dicObj!["CustomerId"];
-            OrderController.SendOrderOTPtoCustomer(vc: vc, dicObj: dic as [String : AnyObject])
+            var dic:[String:Any] = [String:Any]()
+            dic["OrderId"] = dicObj!["Id"]
+            dic["PhotographerId"] = dicObj!["PhotographerId"]
+            dic["CustomerId"] = dicObj!["CustomerId"]
+            OrderController.SendOrderOTPtoCustomer(vc: vc, dicObj: dic )
         } else{
-            var dic:[String:Any] = [String:AnyObject]();
-            dic["OrderId"] = dicObj!["Id"];
-            OrderController.CompleteOrder(vc: vc, dicObj: dic as [String : AnyObject])
+            var dic:[String:Any] = [String:Any]()
+            dic["OrderId"] = dicObj!["Id"]
+            OrderController.CompleteOrder(vc: vc, dicObj: dic)
         }
     }
     
@@ -95,7 +95,7 @@ class OrderDetailTableViewCell: UITableViewCell {
         vc.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func SetData(dic:[String:AnyObject]){
+    func SetData(dic:[String:Any]){
         self.dicObj = dic;
         self.btnFullCall.isHidden = true
         self.btnChat.isHidden = true
@@ -205,7 +205,8 @@ class OrderDetailTableViewCell: UITableViewCell {
             if(status as! String == "5"){
                 self.btnChat.isHidden = true;
                 self.lblRemainingTime.isHidden = false;
-                self.heightConstaintRemainingTIme.constant = 20;
+                self.heightConstaintRemainingTIme.constant = 20
+                
                 self.btnSubmitOTP.setTitle("Complete Shooting", for: UIControl.State.normal)
                 self.btnSubmitOTP.tag = 5
                 if let  ExtStatus = dic["ExtStatus"]{

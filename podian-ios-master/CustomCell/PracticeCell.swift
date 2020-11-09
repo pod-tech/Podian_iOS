@@ -12,7 +12,7 @@ class PracticeCell: UITableViewCell {
 
     @IBOutlet var btnCheck:UIButton!
     @IBOutlet var lblTitle:UILabel!
-    var listPractive:[[String:AnyObject]] = [[String:AnyObject]]()
+    var listPractive:[[String:Any]] = [[String:Any]]()
     var indexPath:IndexPath?
     var vc:FreelancerWorkInfoViewController?
     override func awakeFromNib() {
@@ -20,7 +20,7 @@ class PracticeCell: UITableViewCell {
         // Initialization code
     }
     
-    public func setData(dic:[String:AnyObject],vc:FreelancerWorkInfoViewController){
+    public func setData(dic:[String:Any],vc:FreelancerWorkInfoViewController){
         self.listPractive = vc.listPractive;
         lblTitle.text = (dic["Title"] as! String)
         self.vc = vc;
@@ -30,24 +30,24 @@ class PracticeCell: UITableViewCell {
     @IBAction func btnSelect(sender:UIButton){
         sender.isSelected = !sender.isSelected
         let dic = listPractive[indexPath!.row];
-        Constant.OrderDic!["ElectivePractice"] = "" as AnyObject
+        Constant.OrderDic!["ElectivePractice"] = ""
         vc?.listPractive =  (vc?.listPractive.map{ originalDict in
             var newDict = originalDict
             if((newDict["Title"]  as! String) == (dic["Title"] as! String)){
                 if((newDict["IsSelected"] as! Bool) == false){
-                    newDict["IsSelected"]  = true as AnyObject;
+                    newDict["IsSelected"]  = true
                     
                 }
                 else{
-                    newDict["IsSelected"]  = false as AnyObject;
+                    newDict["IsSelected"]  = false
                 }
             }
             if((newDict["IsSelected"] as! Bool) == true){
                 if((Constant.OrderDic!["ElectivePractice"] as! String) == ""){
-                    Constant.OrderDic!["ElectivePractice"] = (newDict["Title"]  as! String) as AnyObject
+                    Constant.OrderDic!["ElectivePractice"] = (newDict["Title"]  as! String)
                 }
                 else{
-                    Constant.OrderDic!["ElectivePractice"] = "\(Constant.OrderDic!["ElectivePractice"]!),\(newDict["Title"]  as! String)" as AnyObject
+                    Constant.OrderDic!["ElectivePractice"] = "\(Constant.OrderDic!["ElectivePractice"]!),\(newDict["Title"]  as! String)"
                 }
             }
             return newDict

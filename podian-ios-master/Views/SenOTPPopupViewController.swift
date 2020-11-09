@@ -11,8 +11,9 @@ import NotificationBannerSwift
 class SenOTPPopupViewController: BaseViewController {
 
     @IBOutlet var txtOTP:UITextField!
-    public var dicObj:[String:AnyObject] = [:]
+    public var dicObj = [String:Any]()
     public var vc:OrderDetailViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
@@ -32,21 +33,21 @@ class SenOTPPopupViewController: BaseViewController {
             Helper.ShowAlertMessage(message: "Please enter received OTP", vc: self,title:"Required",bannerStyle: BannerStyle.warning)
             return
         }
-        var dic:[String:AnyObject] = [String:AnyObject]();
+        var dic  = [String:Any]()
         dic["OrderId"] = dicObj["OrderId"];
-        dic["PhotographerId"] = dicObj["PhotographerId"];
-        dic["CustomerId"] = dicObj["CustomerId"];
-        dic["OTP"] = txtOTP.text as AnyObject?;
-        OrderController.SUbmitOrderOTPtoCustomer(vc: vc!, dicObj: dic as [String : AnyObject])
+        dic["PhotographerId"] = dicObj["PhotographerId"]
+        dic["CustomerId"] = dicObj["CustomerId"]
+        dic["OTP"] = txtOTP.text
+        OrderController.SUbmitOrderOTPtoCustomer(vc: vc!, dicObj: dic as [String : Any])
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnResendOTP(){
         
-        var dic:[String:Any] = [String:AnyObject]();
-        dic["OrderId"] = dicObj["OrderId"];
-        dic["PhotographerId"] = dicObj["PhotographerId"];
-        dic["CustomerId"] = dicObj["CustomerId"];
-        OrderController.ResendOTPtoCustomer(vc: self, dicObj: dic as [String : AnyObject])
+        var dic:[String:Any] = [String:Any]()
+        dic["OrderId"] = dicObj["OrderId"]
+        dic["PhotographerId"] = dicObj["PhotographerId"]
+        dic["CustomerId"] = dicObj["CustomerId"]
+        OrderController.ResendOTPtoCustomer(vc: self, dicObj : dic )
     }
 }

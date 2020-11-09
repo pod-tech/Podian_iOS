@@ -35,7 +35,7 @@ class FreelancerEmployeeInfoViewController: BaseViewController {
         txtPin.addDoneButtonOnKeyboard(view: self.view)
         self.imagePicker = ImagePicker(presentationController: self,delegate: self)
         self.btnEmployed.isSelected = true;
-        Constant.OrderDic!["Employment"] = "Employed" as AnyObject;
+        Constant.OrderDic!["Employment"] = "Employed"
         // Do any additional setup after loading the view.
     }
     
@@ -82,26 +82,26 @@ class FreelancerEmployeeInfoViewController: BaseViewController {
         }
         
         if(isImageSelected){
-            Constant.OrderDic!["IdProof"] = imgData as AnyObject?
+            Constant.OrderDic!["IdProof"] = imgData
         }
         else{
-            Constant.OrderDic!["IdProof"] = Data.init() as AnyObject
+            Constant.OrderDic!["IdProof"] = Data.init()
         }
         
-        Constant.OrderDic!["Pin"] = txtPin.text as AnyObject;
-        Constant.OrderDic!["Area"] = txtArea.text as AnyObject;
-        Constant.OrderDic!["City"] = txtCity.text as AnyObject;
-        Constant.OrderDic!["State"] = txtState.text as AnyObject;
-        Constant.OrderDic!["Country"] = "India" as AnyObject;
-        Constant.OrderDic!["Aadhar"] = txtAdhaar.text as AnyObject;
+        Constant.OrderDic!["Pin"] = txtPin.text
+        Constant.OrderDic!["Area"] = txtArea.text
+        Constant.OrderDic!["City"] = txtCity.text
+        Constant.OrderDic!["State"] = txtState.text
+        Constant.OrderDic!["Country"] = "India"
+        Constant.OrderDic!["Aadhar"] = txtAdhaar.text
         if(btnEmployed.isSelected){
-            Constant.OrderDic!["Employment"] = "Employed" as AnyObject;
+            Constant.OrderDic!["Employment"] = "Employed"
         }
         else  if(btnUnEMployed.isSelected){
-                   Constant.OrderDic!["Employment"] = "UnEmployed" as AnyObject;
+                   Constant.OrderDic!["Employment"] = "UnEmployed"
                }
         else  if(btnSelf.isSelected){
-            Constant.OrderDic!["Employment"] = "Self-Employed" as AnyObject;
+            Constant.OrderDic!["Employment"] = "Self-Employed" 
         }
         
         

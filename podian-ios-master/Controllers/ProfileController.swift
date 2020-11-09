@@ -11,7 +11,7 @@ import NotificationBannerSwift
 
 class ProfileController: NSObject {
     
-    static func UpdateUserProfile(vc:ProfileViewController,dicObj:[String:AnyObject]){
+    static func UpdateUserProfile(vc:ProfileViewController,dicObj:[String:Any]){
            do{
                vc.showSpinner();
                ApiManager.sharedInstance.requestPOSTMultiPartURL(endUrl: Constant.updateCustomerProfileURL, imageData: dicObj["ProfileImage"] as! Data, parameters: dicObj, success: { (JSON) in

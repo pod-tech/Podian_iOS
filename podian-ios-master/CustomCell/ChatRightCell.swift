@@ -13,7 +13,7 @@ class ChatRightCell: UITableViewCell {
     @IBOutlet var lblTitle:UILabel!
      @IBOutlet var lblMSg:UILabel!
      @IBOutlet var imgUser:UIImageView!
-    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,9 +25,10 @@ class ChatRightCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func SetData(dic:[String: AnyObject]){
-           lblTitle.text = "You";
-           lblMSg.text = dic["Message"] as! String;
+    public func SetData(dic:[String: Any]){
+           lblTitle.text = "You"
+        lblMSg.text = dic["Message"] as? String
+        
             if let imgURL = userInfo?["ProfileImage"]{
                
                    let imageUrl:NSURL = NSURL(string:  (imgURL as! String))!

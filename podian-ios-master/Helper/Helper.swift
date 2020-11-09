@@ -66,12 +66,12 @@ class Constant{
     
     public static var FirstSubcategoryId: String = ""
     public static var AllSubcategoryId: String = ""
-    public static var SelectedAddress: [String:AnyObject]?=nil;
-    public static var OrderDic: [String:AnyObject]?
-    public static var InquiryDic: [String:AnyObject]?
+    public static var SelectedAddress: [String:Any]?=nil;
+    public static var OrderDic: [String:Any]?
+    public static var InquiryDic: [String:Any]?
     
-    public static var SelectedSubCategory: [String:AnyObject]?=nil;
-    public static var SelectedCategory: [String:AnyObject]?=nil;
+    public static var SelectedSubCategory: [String:Any]?=nil;
+    public static var SelectedCategory: [String:Any]?=nil;
     public static var TrasportationCharges: Double = 0.0
     public static var notificationCount:Int = 0;
     public static var txtglobal:UITextField? = nil

@@ -13,9 +13,9 @@ class AvailabilityCollectionViewCell: UICollectionViewCell {
     @IBOutlet  var btnTime:UIButton!
     var indexPath:IndexPath?
     var parentIndexPath:IndexPath?
-    var timeObj:[String:AnyObject]?
+    var timeObj:[String:Any]?
     
-    public func SetData(dic:[String:AnyObject],indexPath:IndexPath,parentIndex:IndexPath){
+    public func SetData(dic:[String:Any],indexPath:IndexPath,parentIndex:IndexPath){
         self.timeObj = dic;
         self.indexPath = indexPath;
         self.parentIndexPath = parentIndex;
@@ -26,11 +26,11 @@ class AvailabilityCollectionViewCell: UICollectionViewCell {
     
     @IBAction func btnSelect_Click(sender:UIButton){
         sender.isSelected = !sender.isSelected
-        self.timeObj!["status"] = sender.isSelected as AnyObject
+        self.timeObj!["status"] = sender.isSelected
         var mainObj = AvailabilityController.availabilityList?[parentIndexPath!.row]
-        var arrtime = mainObj!["Times"] as! [[String:AnyObject]]
+        var arrtime = mainObj!["Times"] as! [[String:Any]]
         arrtime[indexPath!.row] = self.timeObj!
-        mainObj!["Times"] = arrtime as AnyObject;
+        mainObj!["Times"] = arrtime
         
         var status:Bool = true;
         for time in arrtime {
@@ -40,10 +40,9 @@ class AvailabilityCollectionViewCell: UICollectionViewCell {
             }
         }
         if(status){
-            mainObj?["SelectAll"] = true as AnyObject
-        }
-        else{
-            mainObj?["SelectAll"] = false as AnyObject
+            mainObj?["SelectAll"] = true
+        } else{
+            mainObj?["SelectAll"] = false 
         }
     AvailabilityController.availabilityList?[parentIndexPath!.row] = mainObj!
         AvailabilityController.tblAvail?.reloadData()

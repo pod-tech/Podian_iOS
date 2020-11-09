@@ -12,10 +12,10 @@ class ChatViewController: BaseViewController {
     
     @IBOutlet var tblChat:UITableView!
     @IBOutlet var txtChatMsg:UITextField!
-    public var dicObj:[String:AnyObject]!
+    public var dicObj = [String:Any]()
     public let refreshControl = UIRefreshControl()
     var refreshTimer:Timer?
-    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
@@ -66,13 +66,14 @@ class ChatViewController: BaseViewController {
     
     @IBAction func btnClickLocation(sender:UIButton){
         let currLocation = "https://www.google.com/maps/search/?api=1&query=\(Constant.currLat.description),\(Constant.currLng.description)"
-        var dic = [String:AnyObject]();
-        dic["uType"] = "p" as AnyObject;
-        dic["isLocation"] = true as AnyObject;
-        dic["Sender"] = (userInfo!["Id"] as! String) as AnyObject;
-        dic["Receiver"] = (dicObj["CustomerId"] as! String) as AnyObject;
-        dic["Message"] = currLocation as AnyObject;
-        dic["orderId"] = (dicObj["Id"] as! String) as AnyObject;
+        var dic = [String:Any]()
+        
+        dic["uType"] = "p"
+        dic["isLocation"] = true
+        dic["Sender"] = (userInfo!["Id"] as! String)
+        dic["Receiver"] = (dicObj["CustomerId"] as! String)
+        dic["Message"] = currLocation 
+        dic["orderId"] = dicObj["Id"]
         ChatController.SendMessage(vc: self, dicObj: dic)
     }
     
@@ -82,15 +83,15 @@ class ChatViewController: BaseViewController {
             return;
         }
         
-        var dic = [String:AnyObject]();
-        dic["uType"] = "p" as AnyObject;
-        dic["isLocation"] = true as AnyObject;
-        dic["Sender"] = (userInfo!["Id"] as! String) as AnyObject;
-        dic["Receiver"] = (dicObj["CustomerId"] as! String) as AnyObject;
-        dic["Message"] = txtChatMsg.text as AnyObject;
-        dic["orderId"] = (dicObj["Id"] as! String) as AnyObject;
+        var dic = [String:Any]()
+        dic["uType"] = "p"
+        dic["isLocation"] = true
+        dic["Sender"] = (userInfo!["Id"] as! String)
+        dic["Receiver"] = (dicObj["CustomerId"] as! String)
+        dic["Message"] = txtChatMsg.text
+        dic["orderId"] = (dicObj["Id"] as! String)
         ChatController.SendMessage(vc: self, dicObj: dic)
-        txtChatMsg.text = "";
+        txtChatMsg.text = ""
     }
     
     func KeyBoardNotificationObserver(){
@@ -135,20 +136,21 @@ extension ChatViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell?
+//        var cell:UITableViewCell?
         
         if(ChatController.listChat!.count>indexPath.row){
-            let dic =  ChatController.listChat![indexPath.row] as! [String:AnyObject]
+            let dic =  ChatController.listChat![indexPath.row]
             
             if((dic["Sender"] as! String) != (userInfo!["Id"] as! String)){
-                cell = tableView.dequeueReusableCell(withIdentifier: "ChatLeftCell", for: indexPath) as! ChatLeftCell
-                (cell as! ChatLeftCell).SetData(dic: dic)
+                let cell : ChatLeftCell = tableView.dequeueReusableCell(withIdentifier: "ChatLeftCell", for: indexPath) as! ChatLeftCell
+                cell.SetData(dic: dic)
+                return cell
+            } else{
+                let cell : ChatRightCell = tableView.dequeueReusableCell(withIdentifier: "ChatRightCell", for: indexPath) as! ChatRightCell
+                cell.SetData(dic: dic)
+                return cell
             }
-            else{
-                cell = tableView.dequeueReusableCell(withIdentifier: "ChatRightCell", for: indexPath) as! ChatRightCell
-                (cell as! ChatRightCell).SetData(dic: dic)
-            }
-            return (cell ?? nil)!;
+//            return (cell ?? nil)!;
         }
         return tableView.dequeueReusableCell(withIdentifier: "ChatLeftCell", for: indexPath) as! ChatLeftCell
     }

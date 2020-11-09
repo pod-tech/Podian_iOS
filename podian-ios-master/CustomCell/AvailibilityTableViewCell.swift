@@ -13,8 +13,8 @@ class AvailibilityTableViewCell: UITableViewCell,UICollectionViewDelegate,UIColl
     @IBOutlet var btnSelectAll:UIButton!
     @IBOutlet var lblTitle:UILabel!
     @IBOutlet var heightConstain:NSLayoutConstraint!
-    var arrTime:[[String:AnyObject]] =  [[String:AnyObject]]()
-    var timeObj:[String:AnyObject] =  [String:AnyObject]()
+    var arrTime:[[String:Any]] =  [[String:Any]]()
+    var timeObj:[String:Any] =  [String:Any]()
     var indexPath:IndexPath?
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.5, bottom: 0.0, right: 1)
     override func awakeFromNib() {
@@ -44,22 +44,23 @@ class AvailibilityTableViewCell: UITableViewCell,UICollectionViewDelegate,UIColl
         sender.isSelected = !sender.isSelected
         self.arrTime = self.arrTime.map{ originalDict in
             var newDict = originalDict
-            newDict["status"] = sender.isSelected as AnyObject
+            newDict["status"] = sender.isSelected
             return newDict
         }
-        timeObj["Times"] = self.arrTime as AnyObject;
-        timeObj["SelectAll"] = sender.isSelected as AnyObject; AvailabilityController.availabilityList?[indexPath!.row] = timeObj
+        timeObj["Times"] = self.arrTime
+        timeObj["SelectAll"] = sender.isSelected
+        AvailabilityController.availabilityList?[indexPath!.row] = timeObj
         timeCollection?.reloadData()
       
     }
     
-    public func SetData(dic:[String:AnyObject],indexPath:IndexPath){
+    public func SetData(dic:[String:Any],indexPath:IndexPath){
         self.timeObj = dic;
         self.indexPath = indexPath;
         
         self.btnSelectAll.isSelected = (dic["SelectAll"] as! Bool)
         self.lblTitle.text = (dic["title"] as! String)
-        self.arrTime = (dic["Times"] as! [[String:AnyObject]])
+        self.arrTime = (dic["Times"] as! [[String:Any]])
         timeCollection?.reloadData()
 
     }

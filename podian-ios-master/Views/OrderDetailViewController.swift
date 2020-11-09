@@ -80,11 +80,11 @@ class OrderDetailViewController: BaseViewController {
     }
     
     func GetOrderDetail(){
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
         
-        var objDIC = [String:AnyObject]()
+        var objDIC = [String:Any]()
         if let Id = userInfo!["Id"]{
-            objDIC["photographerId"] = Id as AnyObject
+            objDIC["photographerId"] = Id
             OrderController.GetOrdersDetails(userId: Id as! String, orderID: OrderID!, vc: self)
         }
         
@@ -120,13 +120,13 @@ class OrderDetailViewController: BaseViewController {
             Helper.ShowAlertMessage(message: "Select all options", vc: self)
             return
         }
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
-        var otpDic = [String:AnyObject]()
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
+        var otpDic = [String:Any]()
         if let Id = userInfo!["Id"]{
-            otpDic["PhotographerId"] = Id as AnyObject
+            otpDic["PhotographerId"] = Id
         }
-        otpDic["OrderId"] = OrderID as AnyObject
-        otpDic["Checklist"] = "YES" as AnyObject
+        otpDic["OrderId"] = OrderID
+        otpDic["Checklist"] = "YES"
         OrderController.CheckListStatus(vc: self, dicObj: otpDic)
     }
     
@@ -136,8 +136,8 @@ extension OrderDetailViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView==tblOrders){
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderDetailTableViewCell", for: indexPath) as! OrderDetailTableViewCell
-            cell.vc = self;
-            cell.SetData(dic: OrderController.listOrderDetails![indexPath.row] as [String : AnyObject])
+            cell.vc = self
+            cell.SetData(dic: OrderController.listOrderDetails![indexPath.row] as [String : Any])
             return cell;
         }
         else{

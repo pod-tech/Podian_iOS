@@ -24,7 +24,7 @@ class ChatLeftCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func SetData(dic:[String: AnyObject]){
+    public func SetData(dic:[String: Any]){
         lblTitle.text = "User";
         lblMSg.text = dic["Message"] as! String;
     }

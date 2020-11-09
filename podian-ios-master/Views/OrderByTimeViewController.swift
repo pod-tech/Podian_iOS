@@ -12,7 +12,7 @@ class OrderByTimeViewController: BaseViewController,UITableViewDataSource,UITabl
 
         @IBOutlet var tblOrder:UITableView!
         @IBOutlet var lblTitle:UILabel!
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
         public var type:Int!;
         public let refreshControl = UIRefreshControl()
     
@@ -52,9 +52,9 @@ class OrderByTimeViewController: BaseViewController,UITableViewDataSource,UITabl
         }
         
         func GetOrderDetail(){
-           var objDIC = [String:AnyObject]()
+           var objDIC = [String:Any]()
            if let Id = userInfo!["Id"]{
-              objDIC["photographerId"] = Id as AnyObject
+              objDIC["photographerId"] = Id
               OrderController.GetOrdersByTime(userId: Id as! String, vc: self,type: self.type)
             }
        }
@@ -97,14 +97,14 @@ class OrderByTimeViewController: BaseViewController,UITableViewDataSource,UITabl
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
-            cell.SetData(dic: OrderController.listByTimeOrders![indexPath.row] as [String : AnyObject])
+            cell.SetData(dic: OrderController.listByTimeOrders![indexPath.row] as [String : Any])
             return cell;
         }
         
         
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-             let dic =  OrderController.listByTimeOrders![indexPath.row] as [String : AnyObject]
+             let dic =  OrderController.listByTimeOrders![indexPath.row] as [String : Any]
              let storyboard = UIStoryboard(name: "Main", bundle: nil)
              let controller = storyboard.instantiateViewController(withIdentifier: "OrderDetailViewController") as! OrderDetailViewController
             controller.OrderID = (dic["Id"] as! String)

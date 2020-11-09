@@ -13,7 +13,7 @@ class MyNotificationViewController: BaseViewController,UITableViewDataSource,UIT
     public let refreshControl = UIRefreshControl()
     @IBOutlet var tblOrder:UITableView!
     @IBOutlet var btnDeleteAll:UIButton!
-    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {

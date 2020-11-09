@@ -16,7 +16,7 @@ class OrdersViewController: BaseViewController {
     public let refreshControl = UIRefreshControl()
     @IBOutlet var tblOrder:UITableView!
     @IBOutlet weak var completedOrderView: UIView!
-    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -46,9 +46,9 @@ class OrdersViewController: BaseViewController {
     }
     
     func GetOrderDetail(){
-       var objDIC = [String:AnyObject]()
+       var objDIC = [String:Any]()
        if let Id = userInfo!["Id"]{
-          objDIC["photographerId"] = Id as AnyObject
+          objDIC["photographerId"] = Id
           OrderController.GetOrders(userId: Id as! String, vc: self)
         }
     }
@@ -125,18 +125,18 @@ extension OrdersViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
-        cell.SetData(dic: OrderController.listTempOrders![indexPath.row] as [String : AnyObject])
+        cell.SetData(dic: OrderController.listTempOrders![indexPath.row] as [String : Any])
         //cell.vc = self;
         return cell;
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         var dic =  OrderController.listTempOrders![indexPath.row] as [String : AnyObject]
+        let dic =  OrderController.listTempOrders![indexPath.row] as [String : Any]
          let storyboard = UIStoryboard(name: "Main", bundle: nil)
          let controller = storyboard.instantiateViewController(withIdentifier: "OrderDetailViewController") as! OrderDetailViewController
         controller.OrderID = (dic["Id"] as! String)
-        controller.isCompletedOrder = true;
+        controller.isCompletedOrder = true
          self.navigationController!.pushViewController(controller, animated: true)
     }
     

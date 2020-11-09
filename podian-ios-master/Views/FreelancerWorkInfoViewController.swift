@@ -16,7 +16,7 @@ class FreelancerWorkInfoViewController: BaseViewController {
     @IBOutlet var btn1to3:UIButton!
     @IBOutlet var btn3to5:UIButton!
     @IBOutlet var btn5:UIButton!
-    public var listPractive:[[String:AnyObject]] = [[String:AnyObject]]()
+    public var listPractive:[[String:Any]] = [[String:Any]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
@@ -27,8 +27,8 @@ class FreelancerWorkInfoViewController: BaseViewController {
         listPractive = FreelancerController.GetPracticeList(vc:self);
         self.tblPractive.reloadData()
         self.btn6to1.isSelected = true;
-        Constant.OrderDic!["Experience"] = "6 Months - 1Yr" as AnyObject;
-        Constant.OrderDic!["ElectivePractice"] = "" as AnyObject
+        Constant.OrderDic!["Experience"] = "6 Months - 1Yr"
+        Constant.OrderDic!["ElectivePractice"] = ""
         // Do any additional setup after loading the view.
     }
     
@@ -39,16 +39,16 @@ class FreelancerWorkInfoViewController: BaseViewController {
            self.btn6to1.isSelected = false;
            sender.isSelected = true;
         if(sender == self.btn5){
-            Constant.OrderDic!["Experience"] = ">5Yrs" as AnyObject;
+            Constant.OrderDic!["Experience"] = ">5Yrs"
         }
         else if(sender == self.btn1to3){
-            Constant.OrderDic!["Experience"] = "1Yr - 3Yrs" as AnyObject;
+            Constant.OrderDic!["Experience"] = "1Yr - 3Yrs"
         }
         else if(sender == self.btn3to5){
-            Constant.OrderDic!["Experience"] = "3Yrs - 5Yrs" as AnyObject;
+            Constant.OrderDic!["Experience"] = "3Yrs - 5Yrs"
         }
         else if(sender == self.btn6to1){
-            Constant.OrderDic!["Experience"] = "6 Months - 1Yr" as AnyObject;
+            Constant.OrderDic!["Experience"] = "6 Months - 1Yr"
         }
         
         
@@ -88,25 +88,22 @@ extension FreelancerWorkInfoViewController:UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dic = listPractive[indexPath.row];
-        Constant.OrderDic!["ElectivePractice"] = "" as AnyObject
+        Constant.OrderDic!["ElectivePractice"] = ""
         listPractive = listPractive.map{ originalDict in
             var newDict = originalDict
             if((newDict["Title"]  as! String) == (dic["Title"] as! String)){
                 if((newDict["IsSelected"] as! Bool) == false){
-                    newDict["IsSelected"]  = true as AnyObject;
-                    
-                }
-                else{
-                    newDict["IsSelected"]  = false as AnyObject;
+                    newDict["IsSelected"]  = true
+                } else{
+                    newDict["IsSelected"]  = false
                 }
             }
             if((newDict["IsSelected"] as! Bool) == true){
-            if((Constant.OrderDic!["ElectivePractice"] as! String) == ""){
-                Constant.OrderDic!["ElectivePractice"] = (newDict["Title"]  as! String) as AnyObject
-            }
-            else{
-                Constant.OrderDic!["ElectivePractice"] = "\(Constant.OrderDic!["ElectivePractice"]!),\(newDict["Title"]  as! String)" as AnyObject
-            }
+                if((Constant.OrderDic!["ElectivePractice"] as! String) == ""){
+                    Constant.OrderDic!["ElectivePractice"] = (newDict["Title"]  as! String)
+                } else{
+                    Constant.OrderDic!["ElectivePractice"] = "\(Constant.OrderDic!["ElectivePractice"]!),\(newDict["Title"]  as! String)"
+                }
             }
             return newDict
         }

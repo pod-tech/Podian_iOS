@@ -73,17 +73,17 @@ class SIgnUpViewController: BaseViewController {
             Helper.ShowAlertMessage(message:"Please select profile image" , vc: self,title:"Required",bannerStyle: BannerStyle.warning)
             return;
         }
-        var userInfo:[String:AnyObject] = [String:AnyObject]()
+        var userInfo = [String:Any]()
         if(isImageSelected){
-            userInfo["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5) as AnyObject?
+            userInfo["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5)
         }
         else{
-            userInfo["ProfileImage"] = Data.init() as AnyObject
+            userInfo["ProfileImage"] = Data.init()
         }
-        userInfo["Name"] = txtfullName.text as AnyObject
-        userInfo["Email"] = txtEmail.text as AnyObject
-        userInfo["Phone"] = txtPhoneNo.text as AnyObject
-        userInfo["Address"] = txtAddress.text as AnyObject
+        userInfo["Name"] = txtfullName.text
+        userInfo["Email"] = txtEmail.text
+        userInfo["Phone"] = txtPhoneNo.text
+        userInfo["Address"] = txtAddress.text
        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "SignUpOTPViewController") as! SignUpOTPViewController

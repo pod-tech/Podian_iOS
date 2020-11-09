@@ -32,7 +32,7 @@ class FreelancerPersonalInfoViewController: BaseViewController {
         } else {
             // Fallback on earlier versions
         }
-        Constant.OrderDic = [String:AnyObject]()
+        Constant.OrderDic = [String:Any]()
         self.InitializeKeyBoardNotificationObserver()
                 Helper.SetRoundImage(img: profileImg, cornerRadius: 50, borderWidth: 4, borderColor: UIColor.init(red: 250/255, green: 158/255, blue: 0, alpha: 1))
         txtPhoneNo.addDoneButtonOnKeyboard(view: self.view);
@@ -40,7 +40,7 @@ class FreelancerPersonalInfoViewController: BaseViewController {
         self.imagePicker = ImagePicker(presentationController: self,delegate: self)
     profileImg.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ProfileViewController.ShowImagePicker)))
         self.btnMale.isSelected = true;
-        Constant.OrderDic!["Gender"] = "Male" as AnyObject;
+        Constant.OrderDic!["Gender"] = "Male" 
         // Do any additional setup after loading the view.
     }
     
@@ -95,10 +95,10 @@ class FreelancerPersonalInfoViewController: BaseViewController {
 //        }
       
         if(isImageSelected){
-            Constant.OrderDic!["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5) as AnyObject?
+            Constant.OrderDic!["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5)
         }
         else{
-            Constant.OrderDic!["ProfileImage"] = Data.init() as AnyObject
+            Constant.OrderDic!["ProfileImage"] = Data.init()
         }
         
         
@@ -106,19 +106,19 @@ class FreelancerPersonalInfoViewController: BaseViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: "FreelancerEmployeeInfoViewController") as! FreelancerEmployeeInfoViewController
         
        
-        Constant.OrderDic!["Name"] = txtfullName.text as AnyObject;
-        Constant.OrderDic!["Email"] = txtEmail.text as AnyObject;
-        Constant.OrderDic!["Phone"] = txtPhoneNo.text as AnyObject;
+        Constant.OrderDic!["Name"] = txtfullName.text
+        Constant.OrderDic!["Email"] = txtEmail.text
+        Constant.OrderDic!["Phone"] = txtPhoneNo.text
         if(btnMale.isSelected){
-            Constant.OrderDic!["Gender"] = "Male" as AnyObject;
+            Constant.OrderDic!["Gender"] = "Male"
         }
         else if(btnPrfer.isSelected){
-            Constant.OrderDic!["Gender"] = "Prefer not to say" as AnyObject;
+            Constant.OrderDic!["Gender"] = "Prefer not to say"
         }
         else {
-            Constant.OrderDic!["Gender"] = "Female" as AnyObject;
+            Constant.OrderDic!["Gender"] = "Female"
         }
-        Constant.OrderDic!["DOB"] = txtDOB.text as AnyObject;
+        Constant.OrderDic!["DOB"] = txtDOB.text
         
         self.navigationController!.pushViewController(controller, animated: true)
     }

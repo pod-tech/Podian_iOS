@@ -126,7 +126,7 @@ class OrderController: NSObject {
         }
     }
     
-    static func SendOrderOTPtoCustomer(vc:OrderDetailViewController,dicObj:[String:AnyObject]!){
+    static func SendOrderOTPtoCustomer(vc:OrderDetailViewController,dicObj:[String:Any]){
         do{
             
             try
@@ -141,7 +141,7 @@ class OrderController: NSObject {
                     
                     controller.modalPresentationStyle = .overCurrentContext
                     controller.modalTransitionStyle = .crossDissolve
-                    controller.dicObj = dicObj;
+                    controller.dicObj = dicObj
                     controller.vc = (vc as! OrderDetailViewController);
                     vc.present(controller, animated: true, completion: nil)
                     
@@ -162,7 +162,7 @@ class OrderController: NSObject {
         }
     }
     
-    static func SUbmitOrderOTPtoCustomer(vc:OrderDetailViewController,dicObj:[String:AnyObject]!){
+    static func SUbmitOrderOTPtoCustomer(vc:OrderDetailViewController,dicObj:[String:Any]){
         do{
             
             try
@@ -172,12 +172,12 @@ class OrderController: NSObject {
                 let msg =  JSON.dictionary?["Message"]!
                 if((JSON.dictionary?["IsSuccess"]) != false){
                     
-                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
                     
-                    var objDIC = [String:AnyObject]()
+                    var objDIC = [String:Any]()
                     if let Id = userInfo!["Id"]{
-                        objDIC["photographerId"] = Id as AnyObject
-                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj!["OrderId"] as! String, vc: vc)
+                        objDIC["photographerId"] = Id
+                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj["OrderId"] as! String, vc: vc)
                     }
                     
                 }
@@ -196,7 +196,7 @@ class OrderController: NSObject {
         }
     }
     
-    static func ResendOTPtoCustomer(vc:SenOTPPopupViewController,dicObj:[String:AnyObject]!){
+    static func ResendOTPtoCustomer(vc:SenOTPPopupViewController,dicObj:[String:Any]){
         do{
             
             try
@@ -221,7 +221,7 @@ class OrderController: NSObject {
             vc.removeSpinner()
         }
     }
-    static func CompleteOrder(vc:OrderDetailViewController,dicObj:[String:AnyObject]!){
+    static func CompleteOrder(vc:OrderDetailViewController,dicObj:[String:Any]!){
         do{
             
             try
@@ -231,12 +231,12 @@ class OrderController: NSObject {
                 let msg =  JSON.dictionary?["Message"]!
                 if((JSON.dictionary?["IsSuccess"]) != false){
                     
-                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
                     
-                    var objDIC = [String:AnyObject]()
+                    var objDIC = [String : Any]()
                     if let Id = userInfo!["Id"]{
-                        objDIC["photographerId"] = Id as AnyObject
-                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj!["OrderId"] as! String, vc: vc as! OrderDetailViewController)
+                        objDIC["photographerId"] =
+                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj!["OrderId"] as! String, vc: vc )
                     }
                     
                 }
@@ -255,7 +255,7 @@ class OrderController: NSObject {
         }
     }
     
-    static func ChangeExtSatus(vc:OrderDetailViewController,dicObj:[String:AnyObject]!){
+    static func ChangeExtSatus(vc:OrderDetailViewController,dicObj:[String:Any]){
         do{
             
             try
@@ -265,12 +265,12 @@ class OrderController: NSObject {
                 let msg =  JSON.dictionary?["Message"]!
                 if((JSON.dictionary?["IsSuccess"]) != false){
                     
-                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+                    let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
                     
-                    var objDIC = [String:AnyObject]()
+                    var objDIC = [String:Any]()
                     if let Id = userInfo!["Id"]{
-                        objDIC["photographerId"] = Id as AnyObject
-                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj!["ExtOrderId"] as! String, vc: vc as! OrderDetailViewController)
+                        objDIC["photographerId"] = Id
+                        OrderController.GetOrdersDetails(userId: Id as! String, orderID: dicObj["ExtOrderId"] as! String, vc: vc )
                     }
                     
                 }
@@ -366,7 +366,7 @@ class OrderController: NSObject {
         }
     }
     
-    static func CheckListStatus(vc:OrderDetailViewController,dicObj:[String:AnyObject]!){
+    static func CheckListStatus(vc:OrderDetailViewController,dicObj:[String:Any]){
         do{
             
             try

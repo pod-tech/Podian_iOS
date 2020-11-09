@@ -80,26 +80,26 @@ class AvailabilityViewController: BaseViewController,UITableViewDelegate,UITable
             Helper.ShowAlertMessage(message: "Please select date", vc: self,title:"Required",bannerStyle: BannerStyle.warning)
             return;
         }
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
        
-        var objDIC = [String:AnyObject]()
+        var objDIC = [String:Any]()
         if let Id = userInfo!["Id"]{
-             objDIC["photographerId"] = Id as AnyObject
+             objDIC["photographerId"] = Id
         }
-        objDIC["Date"] = txtContact.text as AnyObject;
+        objDIC["Date"] = txtContact.text
         
-        let nightAM = AvailabilityController.availabilityList![0] as! [String:AnyObject]
-        let arrNightAMTIime = nightAM["Times"] as! [[String:AnyObject]]
+        let nightAM = AvailabilityController.availabilityList![0]
+        let arrNightAMTIime = nightAM["Times"] as! [[String:Any]]
         
         for time in arrNightAMTIime {
             if((time["status"] as! Bool) == true){
-                isSelected = true;
-                break;
+                isSelected = true
+                break
             }
         }
         
-        let morningAM = AvailabilityController.availabilityList![1] as! [String:AnyObject]
-        let arrmorningAMTIime = morningAM["Times"] as! [[String:AnyObject]]
+        let morningAM = AvailabilityController.availabilityList![1]
+        let arrmorningAMTIime = morningAM["Times"] as! [[String:Any]]
         
         if(isSelected == false){
             for time in arrmorningAMTIime {
@@ -110,8 +110,8 @@ class AvailabilityViewController: BaseViewController,UITableViewDelegate,UITable
             }
         }
         
-        let AfternoonPM = AvailabilityController.availabilityList![2] as! [String:AnyObject]
-               let arrAfterNoonTIime = AfternoonPM["Times"] as! [[String:AnyObject]]
+        let AfternoonPM = AvailabilityController.availabilityList![2]
+               let arrAfterNoonTIime = AfternoonPM["Times"] as! [[String:Any]]
         if(isSelected == false){
             for time in arrAfterNoonTIime {
                 if((time["status"] as! Bool) == true){
@@ -121,8 +121,8 @@ class AvailabilityViewController: BaseViewController,UITableViewDelegate,UITable
             }
         }
         
-        let eveningPM = AvailabilityController.availabilityList![3] as! [String:AnyObject]
-        let arrEveningTIime = eveningPM["Times"] as! [[String:AnyObject]]
+        let eveningPM = AvailabilityController.availabilityList![3]
+        let arrEveningTIime = eveningPM["Times"] as! [[String:Any]]
         if(isSelected == false){
                    for time in arrEveningTIime {
                        if((time["status"] as! Bool) == true){
@@ -138,61 +138,61 @@ class AvailabilityViewController: BaseViewController,UITableViewDelegate,UITable
         }
         
         
-        objDIC["00:00"] = (arrNightAMTIime[0] )["status"] as AnyObject;
-        objDIC["00:30"] = (arrNightAMTIime[1] )["status"] as AnyObject;
-        objDIC["1:00"] = (arrNightAMTIime[2] )["status"] as AnyObject;
-        objDIC["1:30"] = (arrNightAMTIime[3] )["status"] as AnyObject;
-        objDIC["2:00"] = (arrNightAMTIime[4] )["status"] as AnyObject;
-        objDIC["2:30"] = (arrNightAMTIime[5] )["status"] as AnyObject;
-        objDIC["3:00"] = (arrNightAMTIime[6] )["status"] as AnyObject;
-        objDIC["3:30"] = (arrNightAMTIime[7] )["status"] as AnyObject;
-        objDIC["4:00"] = (arrNightAMTIime[8] )["status"] as AnyObject;
-        objDIC["4:30"] = (arrNightAMTIime[9] )["status"] as AnyObject;
-        objDIC["5:00"] = (arrNightAMTIime[10] )["status"]as AnyObject;
-        objDIC["5:30"] = (arrNightAMTIime[11] )["status"] as AnyObject;
-        objDIC["6:00"] = (arrmorningAMTIime[0] )["status"] as AnyObject;
-        objDIC["6:30"] = (arrmorningAMTIime[1] )["status"] as AnyObject;
-        objDIC["7:00"] = (arrmorningAMTIime[2])["status"] as AnyObject;
-        objDIC["7:30"] = (arrmorningAMTIime[3] )["status"] as AnyObject;
-        objDIC["8:00"] = (arrmorningAMTIime[4] )["status"] as AnyObject;
-        objDIC["8:30"] = (arrmorningAMTIime[5] )["status"] as AnyObject;
-        objDIC["9:00"] = (arrmorningAMTIime[6] )["status"] as AnyObject;
-        objDIC["9:30"] = (arrmorningAMTIime[7] )["status"] as AnyObject;
-        objDIC["10:00"] = (arrmorningAMTIime[8] )["status"] as AnyObject;
-        objDIC["10:30"] = (arrmorningAMTIime[9] )["status"] as AnyObject;
-        objDIC["11:00"] = (arrmorningAMTIime[10] )["status"] as AnyObject;
-        objDIC["11:30"] = (arrmorningAMTIime[11] )["status"] as AnyObject;
-        objDIC["12:00"] = (arrAfterNoonTIime[0] )["status"] as AnyObject;
-        objDIC["12:30"] = (arrAfterNoonTIime[1] )["status"] as AnyObject;
-        objDIC["13:00"] = (arrAfterNoonTIime[2] )["status"] as AnyObject;
-        objDIC["13:30"] = (arrAfterNoonTIime[3] )["status"] as AnyObject;
-        objDIC["14:00"] = (arrAfterNoonTIime[4] )["status"] as AnyObject;
-        objDIC["14:30"] = (arrAfterNoonTIime[5] )["status"] as AnyObject;
-        objDIC["15:00"] = (arrAfterNoonTIime[6] )["status"] as AnyObject;
-        objDIC["15:30"] = (arrAfterNoonTIime[7] )["status"] as AnyObject;
-        objDIC["16:00"] = (arrAfterNoonTIime[8] )["status"] as AnyObject;
-        objDIC["16:30"] = (arrAfterNoonTIime[9] )["status"] as AnyObject;
-        objDIC["17:00"] = (arrAfterNoonTIime[10] )["status"] as AnyObject;
-        objDIC["17:30"] = (arrAfterNoonTIime[11] )["status"] as AnyObject;
-        objDIC["18:00"] = (arrEveningTIime[0] )["status"] as AnyObject;
-        objDIC["18:30"] = (arrEveningTIime[1] )["status"] as AnyObject;
-        objDIC["19:00"] = (arrEveningTIime[2] )["status"] as AnyObject;
-        objDIC["19:30"] = (arrEveningTIime[3] )["status"] as AnyObject;
-        objDIC["20:00"] = (arrEveningTIime[4] )["status"] as AnyObject;
-        objDIC["20:30"] = (arrEveningTIime[5] )["status"] as AnyObject;
-        objDIC["21:00"] = (arrEveningTIime[6] )["status"] as AnyObject;
-        objDIC["21:30"] = (arrEveningTIime[7] )["status"] as AnyObject;
-        objDIC["22:00"] = (arrEveningTIime[8] )["status"] as AnyObject;
-        objDIC["22:30"] = (arrEveningTIime[9] )["status"] as AnyObject;
-        objDIC["23:00"] = (arrEveningTIime[10] )["status"] as AnyObject;
-        objDIC["23:30"] = (arrEveningTIime[11] )["status"] as AnyObject;
-        objDIC["24:30"] = "0" as AnyObject;
+        objDIC["00:00"] = (arrNightAMTIime[0] )["status"]
+        objDIC["00:30"] = (arrNightAMTIime[1] )["status"]
+        objDIC["1:00"] = (arrNightAMTIime[2] )["status"]
+        objDIC["1:30"] = (arrNightAMTIime[3] )["status"]
+        objDIC["2:00"] = (arrNightAMTIime[4] )["status"]
+        objDIC["2:30"] = (arrNightAMTIime[5] )["status"]
+        objDIC["3:00"] = (arrNightAMTIime[6] )["status"]
+        objDIC["3:30"] = (arrNightAMTIime[7] )["status"]
+        objDIC["4:00"] = (arrNightAMTIime[8] )["status"]
+        objDIC["4:30"] = (arrNightAMTIime[9] )["status"]
+        objDIC["5:00"] = (arrNightAMTIime[10] )["status"]
+        objDIC["5:30"] = (arrNightAMTIime[11] )["status"]
+        objDIC["6:00"] = (arrmorningAMTIime[0] )["status"]
+        objDIC["6:30"] = (arrmorningAMTIime[1] )["status"]
+        objDIC["7:00"] = (arrmorningAMTIime[2])["status"]
+        objDIC["7:30"] = (arrmorningAMTIime[3] )["status"]
+        objDIC["8:00"] = (arrmorningAMTIime[4] )["status"]
+        objDIC["8:30"] = (arrmorningAMTIime[5] )["status"]
+        objDIC["9:00"] = (arrmorningAMTIime[6] )["status"]
+        objDIC["9:30"] = (arrmorningAMTIime[7] )["status"]
+        objDIC["10:00"] = (arrmorningAMTIime[8] )["status"]
+        objDIC["10:30"] = (arrmorningAMTIime[9] )["status"]
+        objDIC["11:00"] = (arrmorningAMTIime[10] )["status"]
+        objDIC["11:30"] = (arrmorningAMTIime[11] )["status"]
+        objDIC["12:00"] = (arrAfterNoonTIime[0] )["status"]
+        objDIC["12:30"] = (arrAfterNoonTIime[1] )["status"]
+        objDIC["13:00"] = (arrAfterNoonTIime[2] )["status"]
+        objDIC["13:30"] = (arrAfterNoonTIime[3] )["status"]
+        objDIC["14:00"] = (arrAfterNoonTIime[4] )["status"]
+        objDIC["14:30"] = (arrAfterNoonTIime[5] )["status"]
+        objDIC["15:00"] = (arrAfterNoonTIime[6] )["status"]
+        objDIC["15:30"] = (arrAfterNoonTIime[7] )["status"]
+        objDIC["16:00"] = (arrAfterNoonTIime[8] )["status"]
+        objDIC["16:30"] = (arrAfterNoonTIime[9] )["status"]
+        objDIC["17:00"] = (arrAfterNoonTIime[10] )["status"]
+        objDIC["17:30"] = (arrAfterNoonTIime[11] )["status"]
+        objDIC["18:00"] = (arrEveningTIime[0] )["status"]
+        objDIC["18:30"] = (arrEveningTIime[1] )["status"]
+        objDIC["19:00"] = (arrEveningTIime[2] )["status"]
+        objDIC["19:30"] = (arrEveningTIime[3] )["status"]
+        objDIC["20:00"] = (arrEveningTIime[4] )["status"]
+        objDIC["20:30"] = (arrEveningTIime[5] )["status"]
+        objDIC["21:00"] = (arrEveningTIime[6] )["status"]
+        objDIC["21:30"] = (arrEveningTIime[7] )["status"]
+        objDIC["22:00"] = (arrEveningTIime[8] )["status"]
+        objDIC["22:30"] = (arrEveningTIime[9] )["status"]
+        objDIC["23:00"] = (arrEveningTIime[10] )["status"]
+        objDIC["23:30"] = (arrEveningTIime[11] )["status"]
+        objDIC["24:30"] = "0"
         AvailabilityController.AddAvailabilty(vc: self, dicObj: objDIC)
         
     }
     
     func GetAvailability(){
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
          if let Id = userInfo!["Id"]{
             AvailabilityController.GetAvailability(vc: self, photographerID: Id as! String)
          }

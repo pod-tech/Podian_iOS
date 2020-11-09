@@ -20,7 +20,7 @@ class ChatController: NSObject {
                    let msg =  JSON.dictionary?["Message"]
                    if((JSON.dictionary?["IsSuccess"]) != false){
                        listChat = (JSON.dictionaryObject!["ResponseData"]) as? [[String:Any]];
-                    listChat = listChat!.sorted { personSort(p1:$0 as [String : AnyObject], p2:$1 as [String : AnyObject]) }
+                    listChat = listChat!.sorted { personSort(p1:$0 as [String : Any], p2:$1 as [String : Any]) }
 //                       print(listChat as Any)
                    }
                    else{
@@ -53,7 +53,7 @@ class ChatController: NSObject {
                 let msg =  JSON.dictionary?["Message"]
                 if((JSON.dictionary?["IsSuccess"]) != false){
                     listChat = (JSON.dictionaryObject!["ResponseData"]) as? [[String:Any]];
-                 listChat = listChat!.sorted { personSort(p1:$0 as [String : AnyObject], p2:$1 as [String : AnyObject]) }
+                 listChat = listChat!.sorted { personSort(p1:$0 as [String : Any], p2:$1 as [String : Any]) }
 //                    print(listChat as Any)
                 }
                 else{
@@ -78,13 +78,13 @@ class ChatController: NSObject {
        
     }
     
-    static func personSort(p1:[String:AnyObject], p2:[String:AnyObject]) -> Bool {
+    static func personSort(p1:[String:Any], p2:[String:Any]) -> Bool {
         let s1 = (p1["Id"] as! String)
         let s2 = (p2["Id"] as! String)
         return s1 < s2
     }
     
-    static func SendMessage(vc:ChatViewController,dicObj:[String:AnyObject]){
+    static func SendMessage(vc:ChatViewController,dicObj:[String:Any]){
         do{
             vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTURL(Constant.SendMessageURL,  params: dicObj, success: { (JSON) in

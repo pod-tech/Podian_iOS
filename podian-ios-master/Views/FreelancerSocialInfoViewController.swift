@@ -32,7 +32,7 @@ class FreelancerSocialInfoViewController: BaseViewController {
         }
         self.InitializeKeyBoardNotificationObserver()
         self.btnALl.isSelected = true;
-        Constant.OrderDic!["Availibility"] = "All days (24*7)" as AnyObject;
+        Constant.OrderDic!["Availibility"] = "All days (24*7)"
         // Do any additional setup after loading the view.
     }
     
@@ -60,15 +60,15 @@ class FreelancerSocialInfoViewController: BaseViewController {
                }
         else if(txtLens3.text?.count == 0){
             Helper.ShowAlertMessage(message:"Please enter Lenses information." , vc: self,title:"Required",bannerStyle: BannerStyle.warning)
-            return;
+            return
         }
                
-               Constant.OrderDic!["InstagramURL"] = txtInstaURL.text as AnyObject;
-               Constant.OrderDic!["PortfolioUrl"] = txyProtURL.text as AnyObject;
-               Constant.OrderDic!["CameraBody"] = txtBody.text as AnyObject;
-               Constant.OrderDic!["Lances1"] = txtLens1.text as AnyObject;
-               Constant.OrderDic!["Lances2"] = txtLens2.text as AnyObject;
-                Constant.OrderDic!["Lances3"] = txtLens3.text as AnyObject;
+               Constant.OrderDic!["InstagramURL"] = txtInstaURL.text
+               Constant.OrderDic!["PortfolioUrl"] = txyProtURL.text
+               Constant.OrderDic!["CameraBody"] = txtBody.text
+               Constant.OrderDic!["Lances1"] = txtLens1.text
+               Constant.OrderDic!["Lances2"] = txtLens2.text
+                Constant.OrderDic!["Lances3"] = txtLens3.text
        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,19 +84,15 @@ class FreelancerSocialInfoViewController: BaseViewController {
         self.btnWeek.isSelected = false;
         sender.isSelected = true;
         if(btnALl == sender){
-            Constant.OrderDic!["Availibility"] = "All days (24*7)" as AnyObject;
-        }
-        else if(btnMor == sender){
-            Constant.OrderDic!["Availibility"] = "Early Mornings(5AM-8AM)" as AnyObject;
-        }
-        else if(btnEve == sender){
-            Constant.OrderDic!["Availibility"] = "Evening(5PM-8PM)" as AnyObject;
-        }
-        else if(btnLate == sender){
-            Constant.OrderDic!["Availibility"] = "Late Nights(8PM-12AM)" as AnyObject;
-        }
-        else if(btnWeek == sender){
-            Constant.OrderDic!["Availibility"] = "Weekends(24*2)" as AnyObject;
+            Constant.OrderDic!["Availibility"] = "All days (24*7)"
+        } else if(btnMor == sender){
+            Constant.OrderDic!["Availibility"] = "Early Mornings(5AM-8AM)"
+        } else if(btnEve == sender){
+            Constant.OrderDic!["Availibility"] = "Evening(5PM-8PM)"
+        } else if(btnLate == sender){
+            Constant.OrderDic!["Availibility"] = "Late Nights(8PM-12AM)"
+        } else if(btnWeek == sender){
+            Constant.OrderDic!["Availibility"] = "Weekends(24*2)"
         }
     }
     

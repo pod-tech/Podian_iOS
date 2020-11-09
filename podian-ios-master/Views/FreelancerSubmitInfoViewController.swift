@@ -39,7 +39,7 @@ class FreelancerSubmitInfoViewController: BaseViewController, UIPickerViewDataSo
         txtJoinAs.setDismissToolBar(target: self, selector: #selector(FreelancerSubmitInfoViewController.btJoinUsSelect))
         
         btnYes.isSelected = true;
-        Constant.OrderDic!["ReadyToTrawelPodProject"] = "Yes" as AnyObject;
+        Constant.OrderDic!["ReadyToTrawelPodProject"] = "Yes"
     }
     
     @objc func btnMediaSelect(){
@@ -57,10 +57,10 @@ class FreelancerSubmitInfoViewController: BaseViewController, UIPickerViewDataSo
         self.btnNo.isSelected = false;
         sender.isSelected = true;
         if(sender == btnYes){
-            Constant.OrderDic!["ReadyToTrawelPodProject"] = "Yes" as AnyObject;
+            Constant.OrderDic!["ReadyToTrawelPodProject"] = "Yes"
         }
         else{
-            Constant.OrderDic!["ReadyToTrawelPodProject"] = "No" as AnyObject;
+            Constant.OrderDic!["ReadyToTrawelPodProject"] = "No"
         }
     }
     
@@ -87,9 +87,9 @@ class FreelancerSubmitInfoViewController: BaseViewController, UIPickerViewDataSo
             Helper.ShowAlertMessage(message:"Please select terms and condition." , vc: self,title:"Required",bannerStyle: BannerStyle.warning)
             return;
         }
-        Constant.OrderDic!["Source"] = txtMedia.text as AnyObject;
-        Constant.OrderDic!["aboutPOD"] = txtKnow.text as AnyObject;
-        Constant.OrderDic!["RegType"] = txtJoinAs.text as AnyObject;
+        Constant.OrderDic!["Source"] = txtMedia.text
+        Constant.OrderDic!["aboutPOD"] = txtKnow.text
+        Constant.OrderDic!["RegType"] = txtJoinAs.text 
         FreelancerController.FreelancerRegistration(vc: self, dicObj: Constant.OrderDic!)
     }
 }

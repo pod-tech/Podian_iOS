@@ -9,13 +9,13 @@
 import UIKit
 import NotificationBannerSwift
 class AvailabilityController: NSObject {
-
-    public static var availabilityList:[[String:AnyObject]]?
-    public static var userAvailabilityList:[[String:AnyObject]]?
+    
+    public static var availabilityList:[[String:Any]]?
+    public static var userAvailabilityList:[[String:Any]]?
     public static var tblAvail:UITableView?
     static func InitializeAvailabilityTime(vc:AvailabilityViewController){
         
-        AvailabilityController.availabilityList = [[String:AnyObject]]();
+        AvailabilityController.availabilityList = [[String:Any]]()
         
         let NightAmTimeArray = ["12-12:30 AM","12:30-01 AM","01-01:30 AM","01:30-02 AM","02-02:30 AM","02:30-03 AM","03-03:30 AM","03:30-04 AM","04-04:30 AM","04:30-05 AM","05-05:30 AM","05:30-06 AM"]
         
@@ -25,86 +25,86 @@ class AvailabilityController: NSObject {
         
         let NightPMTimeArray = ["18-18:30 PM","18:30-19 PM","19-19:30 PM","19:30-20 PM","20-20:30 PM","20:30-21 PM","21-21:30 PM","21:30-22 PM","22-22:30 PM","22:30-23 PM","23-23:30 PM","23:30-24 PM"]
         
-        var nightAMAM = [String:AnyObject]();
-        nightAMAM["SelectAll"] = false as AnyObject;
-        nightAMAM["title"] = "Night(AM - AM)" as AnyObject
-        var nightAMAMTimeArray = [[String:AnyObject]]()
+        var nightAMAM = [String:Any]()
+        nightAMAM["SelectAll"] = false
+        nightAMAM["title"] = "Night(AM - AM)"
+        var nightAMAMTimeArray = [[String:Any]]()
         for obj in NightAmTimeArray {
-            var timeObj = [String:AnyObject]();
-            timeObj["time"] = obj as AnyObject
-            timeObj["status"] = false as AnyObject
+            var timeObj = [String:Any]()
+            timeObj["time"] = obj
+            timeObj["status"] = false
             nightAMAMTimeArray.append(timeObj)
         }
-        nightAMAM["Times"] = nightAMAMTimeArray as AnyObject;
+        nightAMAM["Times"] = nightAMAMTimeArray
         AvailabilityController.availabilityList?.append(nightAMAM)
         
         ////------------------
-        var morningAMAM = [String:AnyObject]();
-        morningAMAM["SelectAll"] = false as AnyObject;
-        morningAMAM["title"] = "Morning(AM - AM)" as AnyObject
-        var morningAMAMTimeArray = [[String:AnyObject]]()
+        var morningAMAM = [String:Any]()
+        morningAMAM["SelectAll"] = false
+        morningAMAM["title"] = "Morning(AM - AM)"
+        var morningAMAMTimeArray = [[String:Any]]()
         for obj in MorningAmTimeArray {
-            var timeObj = [String:AnyObject]();
-            timeObj["time"] = obj as AnyObject
-            timeObj["status"] = false as AnyObject
+            var timeObj = [String:Any]()
+            timeObj["time"] = obj
+            timeObj["status"] = false
             morningAMAMTimeArray.append(timeObj)
         }
-        morningAMAM["Times"] = morningAMAMTimeArray as AnyObject;
+        morningAMAM["Times"] = morningAMAMTimeArray
         AvailabilityController.availabilityList?.append(morningAMAM)
         
         ////------------------
-               var afternoonPM = [String:AnyObject]();
-        afternoonPM["title"] = "Afternoon(PM - PM)" as AnyObject
-               afternoonPM["SelectAll"] = false as AnyObject;
-               var afternoonTimeArray = [[String:AnyObject]]()
-               for obj in AfternoonPMTimeArray {
-                   var timeObj = [String:AnyObject]();
-                   timeObj["time"] = obj as AnyObject
-                   timeObj["status"] = false as AnyObject
-                   afternoonTimeArray.append(timeObj)
-               }
-               afternoonPM["Times"] = afternoonTimeArray as AnyObject;
-               AvailabilityController.availabilityList?.append(afternoonPM)
+        var afternoonPM = [String:Any]()
+        afternoonPM["title"] = "Afternoon(PM - PM)"
+        afternoonPM["SelectAll"] = false
+        var afternoonTimeArray = [[String:Any]]()
+        for obj in AfternoonPMTimeArray {
+            var timeObj = [String:Any]()
+            timeObj["time"] = obj
+            timeObj["status"] = false
+            afternoonTimeArray.append(timeObj)
+        }
+        afternoonPM["Times"] = afternoonTimeArray
+        AvailabilityController.availabilityList?.append(afternoonPM)
         
         ////------------------
-        var nightPM = [String:AnyObject]();
-        nightPM["SelectAll"] = false as AnyObject;
-        nightPM["title"] = "Evening(PM - PM)" as AnyObject
-        var nightPMTimeArray = [[String:AnyObject]]()
+        var nightPM = [String:Any]()
+        nightPM["SelectAll"] = false
+        nightPM["title"] = "Evening(PM - PM)"
+        var nightPMTimeArray = [[String:Any]]()
         for obj in NightPMTimeArray {
-            var timeObj = [String:AnyObject]();
-            timeObj["time"] = obj as AnyObject
-            timeObj["status"] = false as AnyObject
+            var timeObj = [String:Any]()
+            timeObj["time"] = obj
+            timeObj["status"] = false
             nightPMTimeArray.append(timeObj)
         }
-        nightPM["Times"] = nightPMTimeArray as AnyObject;
-    AvailabilityController.availabilityList?.append(nightPM)
+        nightPM["Times"] = nightPMTimeArray
+        AvailabilityController.availabilityList?.append(nightPM)
         
-//        print(AvailabilityController.availabilityList as Any);
+        //        print(AvailabilityController.availabilityList as Any);
         vc.tblAddAvail.reloadData()
         AvailabilityController.tblAvail = vc.tblAddAvail;
         
     }
     
-
-    static func AddAvailabilty(vc:AvailabilityViewController,dicObj:[String:AnyObject]){
+    
+    static func AddAvailabilty(vc:AvailabilityViewController,dicObj:[String:Any]){
         do{
             
             vc.showSpinner()
             ApiManager.sharedInstance.requestPOSTURL(Constant.addavailibilityURL, params: dicObj,success: { (JSON) in
                 let msg =  (JSON.dictionaryObject?["Message"] as! String)
-               
+                
                 if((JSON.dictionary?["IsSuccess"]) != false){
                     let callActionHandler = { () -> Void in
-                                   self.ResetSelection(vc: vc)
-                                       }
+                        self.ResetSelection(vc: vc)
+                    }
                     Helper.ShowAlertMessageWithHandlesr(message:msg,title:""  ,vc: vc,action:callActionHandler)
                     
                 }
                 else{
                     let callActionHandler = { () -> Void in
-                                   self.ResetSelection(vc: vc)
-                                       }
+                        self.ResetSelection(vc: vc)
+                    }
                     Helper.ShowAlertMessageWithHandlesr(message:msg , vc: vc,action:callActionHandler)
                 }
                 vc.removeSpinner()
@@ -122,37 +122,37 @@ class AvailabilityController: NSObject {
     static func ResetSelection(vc:UIViewController){
         
         AvailabilityController.availabilityList = AvailabilityController.availabilityList.map{ originalDict in
-            var newDict = originalDict as [[String:AnyObject]]
-//            print(originalDict)
+            var newDict = originalDict as [[String:Any]]
+            //            print(originalDict)
             newDict = newDict.map({ timeDic in
-                var tempTimeDic = timeDic as  [String:AnyObject]
-                tempTimeDic["SelectAll"] = false as AnyObject
-                var timeArr = tempTimeDic["Times"] as! [[String:AnyObject]]
-                    timeArr = timeArr.map{ time in
+                var tempTimeDic = timeDic as  [String:Any]
+                tempTimeDic["SelectAll"] = false
+                var timeArr = tempTimeDic["Times"] as! [[String:Any]]
+                timeArr = timeArr.map{ time in
                     var tempTime = time
-                    tempTime["status"] = false as AnyObject
+                    tempTime["status"] = false
                     return tempTime;
                 }
-                tempTimeDic["Times"] = timeArr as AnyObject
+                tempTimeDic["Times"] = timeArr
                 return tempTimeDic;
             })
             //newDict["Times"] = timeArr as! [[String:AnyObject]]
-            return newDict as! [[String : AnyObject]]
+            return newDict
         }
-        AvailabilityController.tblAvail?.reloadData();
-       
+        AvailabilityController.tblAvail?.reloadData()
+        
     }
     
     static func GetAvailability(vc:AvailabilityViewController,photographerID:String){
         do{
             try
-                userAvailabilityList = [[String:AnyObject]]()
-                vc.tblYourAvail.reloadData()
-                vc.showSpinner()
-                ApiManager.sharedInstance.requestGETURL("\(Constant.getAvailibilityURL)\(photographerID)", success: { (JSON) in
+                userAvailabilityList = [[String:Any]]()
+            vc.tblYourAvail.reloadData()
+            vc.showSpinner()
+            ApiManager.sharedInstance.requestGETURL("\(Constant.getAvailibilityURL)\(photographerID)", success: { (JSON) in
                 let msg =  JSON.dictionary?["Message"]
                 if((JSON.dictionary?["IsSuccess"]) != false){
-                    userAvailabilityList = (JSON.dictionaryObject!["ResponseData"]) as! [[String : AnyObject]]?;
+                    userAvailabilityList = (JSON.dictionaryObject!["ResponseData"]) as! [[String : Any]]?;
                     //print(listCategory as Any)
                 }
                 else{
@@ -168,7 +168,7 @@ class AvailabilityController: NSObject {
             }
             
         }
-       
+        
     }
     
 }

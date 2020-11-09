@@ -29,8 +29,8 @@ class ForgetPasswordViewController: BaseViewController {
             return;
         }
         txtEmail.resignFirstResponder()
-        var otpDic = [String:AnyObject]()
-        otpDic["E_O_P"] = txtEmail.text as AnyObject;
+        var otpDic = [String:Any]()
+        otpDic["E_O_P"] = txtEmail.text
         ForgetPassController.ForgetPasswordSendOTP(vc:self,dicObj:otpDic)
     }
 }

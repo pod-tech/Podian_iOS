@@ -28,7 +28,7 @@ class OrderCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func SetData(dic:[String:AnyObject]){
+    func SetData(dic:[String:Any]){
         
         
         if let  ShootingDate = dic["ShootingDate"]{

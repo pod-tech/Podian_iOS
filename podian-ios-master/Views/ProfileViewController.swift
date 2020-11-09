@@ -53,7 +53,7 @@ class ProfileViewController: BaseViewController {
     }
     
     func LoadProfileData(){
-        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+        let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
         if let Id = userInfo!["Id"]{
             lblPhotGrapherID.text = "Photographer id: #PODPH\(Id as! String)";
         }
@@ -128,15 +128,15 @@ class ProfileViewController: BaseViewController {
                txtPhoneNo.resignFirstResponder()
                txtAddress.resignFirstResponder()
                 txtEmail.resignFirstResponder()
-               let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
-               var otpDic = [String:AnyObject]()
+               let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
+               var otpDic = [String:Any]()
                if let Id = userInfo!["Id"]{
-                    otpDic["Id"] = Id as AnyObject
+                    otpDic["Id"] = Id
                }
-                otpDic["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5) as AnyObject?
-               otpDic["Name"] = txtfullName.text as AnyObject
-               otpDic["Address"] = txtAddress.text as AnyObject
-              otpDic["Phone"] = txtPhoneNo.text as AnyObject
+                otpDic["ProfileImage"] = profileImg.image!.jpegData(compressionQuality: 0.5)
+               otpDic["Name"] = txtfullName.text
+               otpDic["Address"] = txtAddress.text
+              otpDic["Phone"] = txtPhoneNo.text 
         ProfileController.UpdateUserProfile(vc: self, dicObj: otpDic)
     }
     

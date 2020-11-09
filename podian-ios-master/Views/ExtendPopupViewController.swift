@@ -14,7 +14,7 @@ class ExtendPopupViewController: BaseViewController {
     @IBOutlet var btnAccept:UIButton!
     @IBOutlet var btnReject:UIButton?
     @IBOutlet var viewPopup:UIView!
-    public var dicObj:[String:AnyObject]!
+    public var dicObj = [String:Any]()
     public var vc:OrderDetailViewController?
     
     override func viewDidLoad() {
@@ -37,13 +37,13 @@ class ExtendPopupViewController: BaseViewController {
     
     @IBAction func btnStatusSelect(sender:UIButton){
         
-        var dic:[String:Any] = [String:AnyObject]();
-        dic["ExtId"] = dicObj["ExtId"];
-        dic["ExtOrderId"] = dicObj["ExtOrderId"];
-        dic["ExtPhotographerId"] = dicObj["ExtPhotographerId"];
-        dic["ExtCustomerId"] = dicObj["ExtCustomerId"];
-        dic["ExtStatus"] = sender.tag.description;
-        OrderController.ChangeExtSatus(vc: vc!, dicObj: dic as [String : AnyObject])
+        var dic:[String:Any] = [String:Any]()
+        dic["ExtId"] = dicObj["ExtId"]
+        dic["ExtOrderId"] = dicObj["ExtOrderId"]
+        dic["ExtPhotographerId"] = dicObj["ExtPhotographerId"]
+        dic["ExtCustomerId"] = dicObj["ExtCustomerId"]
+        dic["ExtStatus"] = sender.tag.description
+        OrderController.ChangeExtSatus(vc: vc!, dicObj: dic)
         self.dismiss(animated: true, completion: nil)
         
     }

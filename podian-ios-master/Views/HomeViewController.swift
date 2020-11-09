@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: BaseViewController {
     
     @IBOutlet var lblNotificationCount:UILabel!
-     let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:AnyObject]
+     let userInfo = Helper.UnArchivedUserDefaultObject(key: "UserInfo") as? [String:Any]
     
     var timer:Timer!
     override func viewDidLoad() {
