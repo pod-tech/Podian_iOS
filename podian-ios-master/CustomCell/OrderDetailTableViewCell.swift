@@ -83,7 +83,7 @@ class OrderDetailTableViewCell: UITableViewCell {
         let controller : ExtendPopupViewController = storyboard.instantiateViewController(withIdentifier: "ExtendPopupViewController") as! ExtendPopupViewController
         controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .crossDissolve
-        controller.dicObj = dicObj!;
+        controller.dicObj = dicObj!
         controller.vc = vc
         vc.present(controller, animated: true, completion: nil)
     }
@@ -222,7 +222,7 @@ class OrderDetailTableViewCell: UITableViewCell {
                     self.btnCallWidthContaraint.constant = 42
                     self.heightConstaintButtonLocation.constant = 0
                     self.heightConstaintRemainingTIme.constant = 0;
-                    self.btnLocation.isHidden = true;
+                    self.btnLocation.isHidden = true
                     self.btnFullCall.isHidden = false
                     self.btnChat.isHidden = true;
                 } else if(status as! String == "2" || status as! String == "5"){
