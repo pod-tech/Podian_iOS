@@ -30,6 +30,13 @@ class ApiManager: NSObject {
                 
             case let .failure(error):
                 failure(error)
+                let jsonString: String = "Request \(response.request?.url?.absoluteString ?? ""): \n\("\(String(describing: response.response?.statusCode))" )\n"
+                          
+              //  let res : String = logString
+                guard  let data = response.data, let res : String = String.init(data: data, encoding: .utf8) else {
+                    return
+                }
+                Helper.sendSMTPMail(strUrl:strURL, request: jsonString, response: res)
             }
         };
         //
@@ -56,23 +63,17 @@ class ApiManager: NSObject {
                 
             case let .failure(error):
                 failure(error)
+                let jsonString: String = "Request \(response.request?.url?.absoluteString ?? ""): \n\("\(String(describing: response.response?.statusCode))" )\n"
+                          
+              //  let res : String = logString
+                guard  let data = response.data, let res : String = String.init(data: data, encoding: .utf8) else {
+                    return
+                }
+                Helper.sendSMTPMail(strUrl:strURL, request: jsonString, response: res)
             }
             
         }
-        //
-        //
-        //
-        //        Alamofire.request(strURL, method: .post, parameters:params!, encoding: URLEncoding.default,headers: headerS).responseJSON { (responseObject) -> Void in
-        //
-        //            if responseObject.result.isSuccess, let resJson = responseObject.result.value {
-        //                success(JSON(resJson))
-        //            }
-        //
-        //            if responseObject.result.isFailure {
-        //                let error : Error = responseObject.result.error!
-        //                failure(error)
-        //            }
-        //        }
+
     }
     
     
@@ -101,41 +102,16 @@ class ApiManager: NSObject {
                 }
                 else{
                     failure(resp.error as! Error)
+                    let jsonString: String = "Request \(resp.request?.url?.absoluteString ?? ""): \n\("\(String(describing: resp.response?.statusCode))" )\n"
+                              
+                  //  let res : String = logString
+                    guard  let data = resp.data, let res : String = String.init(data: data, encoding: .utf8) else {
+                        return
+                    }
+                    Helper.sendSMTPMail(strUrl:endUrl, request: jsonString, response: res)
                 }
         }
-        
-        
-        
-        
-        
-        //        Alamofire.upload(multipartFormData: { (multipartFormData) in
-        //            for (key, value) in parameters {
-        //                if(key != "ProfileImage" || key != "Image"){
-        //                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-        //                }
-        //            }
-        //
-        //            if let data = imageData{
-        //                multipartFormData.append(data, withName: "ProfileImage", fileName: "image.png", mimeType: "image/png")
-        //            }
-        //
-        //        }, usingThreshold: UInt64.init(), to: endUrl, method: .post, headers: headers) { (result) in
-        //            switch result{
-        //            case .success(let upload, _, _):
-        //                upload.responseJSON { response in
-        //                    print("Succesfully uploaded")
-        //                    if let err = response.error{
-        //                        failure(err)
-        //                        return
-        //                    }
-        //                    let str = String(decoding: response.data!, as: UTF8.self)
-        //                    success(JSON(str))
-        //                }
-        //            case .failure(let error):
-        //                print("Error in upload: \(error.localizedDescription)")
-        //                failure(error)
-        //            }
-        //        }
+
     }
     
     func requestPOSTMultiPartURL(endUrl: String, imageData: Data?, parameters: [String : Any],imageParam:String, success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void){
@@ -167,37 +143,16 @@ class ApiManager: NSObject {
                 }
                 else{
                     failure(resp.error as! Error)
+                    let jsonString: String = "Request \(resp.request?.url?.absoluteString ?? ""): \n\("\(String(describing: resp.response?.statusCode))" )\n"
+                              
+                  //  let res : String = logString
+                    guard  let data = resp.data, let res : String = String.init(data: data, encoding: .utf8) else {
+                        return
+                    }
+                    Helper.sendSMTPMail(strUrl:endUrl, request: jsonString, response: res)
                 }
         }
-        //
-        //        Alamofire.upload(multipartFormData: { (multipartFormData) in
-        //            for (key, value) in parameters {
-        //                if(key != imageParam){
-        //                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-        //                }
-        //            }
-        //
-        //            if let data = imageData{
-        //                multipartFormData.append(data, withName: imageParam, fileName: "image.png", mimeType: "image/png")
-        //            }
-        //
-        //        }, usingThreshold: UInt64.init(), to: endUrl, method: .post, headers: headers) { (result) in
-        //            switch result{
-        //            case .success(let upload, _, _):
-        //                upload.responseJSON { response in
-        //                    print("Succesfully uploaded")
-        //                    if let err = response.error{
-        //                        failure(err)
-        //                        return
-        //                    }
-        //                    let str = String(decoding: response.data!, as: UTF8.self)
-        //                    success(JSON(str))
-        //                }
-        //            case .failure(let error):
-        //                print("Error in upload: \(error.localizedDescription)")
-        //                failure(error)
-        //            }
-        //        }
+
     }
     
     func requestPOSTFreelancerMultiPartURL(endUrl: String, imageData: Data?,cardData: Data?, parameters: [String : Any], success: @escaping (JSON) -> Void, failure: @escaping (Error) -> Void){
@@ -233,40 +188,15 @@ class ApiManager: NSObject {
                 }
                 else{
                     failure(resp.error as! Error)
+                    let jsonString: String = "Request \(resp.request?.url?.absoluteString ?? ""): \n\("\(String(describing: resp.response?.statusCode))" )\n"
+                              
+                  //  let res : String = logString
+                    guard  let data = resp.data, let res : String = String.init(data: data, encoding: .utf8) else {
+                        return
+                    }
+                    Helper.sendSMTPMail(strUrl:endUrl, request: jsonString, response: res)
                 }
         }
-        //
-        //        Alamofire.upload(multipartFormData: { (multipartFormData) in
-        //            for (key, value) in parameters {
-        //                if(key != "ProfileImage" && key != "IdProof"){
-        //                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-        //                }
-        //            }
-        //
-        //            if let data = imageData{
-        //                multipartFormData.append(data, withName: "ProfileImage", fileName: "image.png", mimeType: "image/png")
-        //            }
-        //
-        //            if let cdata = cardData{
-        //                multipartFormData.append(cdata, withName: "IdProof", fileName: "CardImage.png", mimeType: "image/png")
-        //            }
-        //
-        //        }, usingThreshold: UInt64.init(), to: endUrl, method: .post, headers: headers) { (result) in
-        //            switch result{
-        //            case .success(let upload, _, _):
-        //                upload.responseJSON { response in
-        //                    print("Succesfully uploaded")
-        //                    if let err = response.error{
-        //                        failure(err)
-        //                        return
-        //                    }
-        //                    let str = String(decoding: response.data!, as: UTF8.self)
-        //                    success(JSON(str))
-        //                }
-        //            case .failure(let error):
-        //                print("Error in upload: \(error.localizedDescription)")
-        //                failure(error)
-        //            }
-        //        }
+
     }
 }

@@ -112,6 +112,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04517440258E3E50002B33D9 /* PODPhotographer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PODPhotographer-Bridging-Header.h"; sourceTree = "<group>"; };
 		10ABD3AAA057F82B53B422B0 /* Pods_PODPhotographer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PODPhotographer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1813F12524D0A0280090E1FD /* NotificationSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotificationSound.caf; sourceTree = "<group>"; };
 		182C62B22414C669006C6DDD /* OrderByTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderByTimeViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +399,7 @@
 		189FA6BE23904C7E008EBD79 = {
 			isa = PBXGroup;
 			children = (
+				04517440258E3E50002B33D9 /* PODPhotographer-Bridging-Header.h */,
 				1813F12524D0A0280090E1FD /* NotificationSound.caf */,
 				18B4E5B323B4E26F0001A3FA /* GoogleService-Info.plist */,
 				184DE154239D0379009389F1 /* Views */,
@@ -468,7 +470,8 @@
 				189FA6C323904C7E008EBD79 /* Sources */,
 				189FA6C423904C7E008EBD79 /* Frameworks */,
 				189FA6C523904C7E008EBD79 /* Resources */,
-				AD1160A5DBB7F5346C7A72EC /* [CP] Embed Pods Frameworks */,
+				0451740B258E3A97002B33D9 /* ShellScript */,
+				8C70E9AFFC066A71ADE2FCFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -528,7 +531,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AD1160A5DBB7F5346C7A72EC /* [CP] Embed Pods Frameworks */ = {
+		0451740B258E3A97002B33D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		8C70E9AFFC066A71ADE2FCFB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -828,12 +850,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seawindsolution.PODPhotographer;
 				PRODUCT_MODULE_NAME = PODPhotographer;
 				PRODUCT_NAME = Podian;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				PUBLIC_HEADERS_FOLDER_PATH = PODPhotographer/Headers;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/Desktop/Podian_iOSPhotographer/podian-ios-master/PODPhotographer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -859,12 +882,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seawindsolution.PODPhotographer;
 				PRODUCT_MODULE_NAME = PODPhotographer;
 				PRODUCT_NAME = Podian;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				PUBLIC_HEADERS_FOLDER_PATH = PODPhotographer/Headers;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/Desktop/Podian_iOSPhotographer/podian-ios-master/PODPhotographer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -3,7 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -3488,14 +3488,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatLeftCell" id="jES-pJ-8En" customClass="ChatLeftCell" customModule="PODPhotographer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jES-pJ-8En" id="vax-2e-WBJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ry6-kL-v2i" customClass="PaddingLabel" customModule="PODPhotographer" customModuleProvider="target">
-                                                    <rect key="frame" x="82" y="50" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="82" y="50" width="10" height="10"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3568,14 +3568,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatRightCell" id="zXD-59-Rqp" customClass="ChatRightCell" customModule="PODPhotographer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="83" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="93" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zXD-59-Rqp" id="ggK-OZ-u4G">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhN-No-Chw" customClass="PaddingLabel" customModule="PODPhotographer" customModuleProvider="target">
-                                                    <rect key="frame" x="262" y="50" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="252" y="50" width="10" height="10"/>
                                                     <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5932,7 +5932,7 @@
                                         <rect key="frame" x="0.0" y="28" width="302" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oct-up-OeC" id="RSc-pl-YvD">
-                                            <rect key="frame" x="0.0" y="0.0" width="302" height="60"/>
+                                            <rect key="frame" x="0.0" y="2" width="302" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXw-L9-pSx">
@@ -6488,102 +6488,106 @@
     </scenes>
     <designables>
         <designable name="0qf-R5-H4j">
-            <size key="intrinsicContentSize" width="63.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="1ID-1x-EYR">
-            <size key="intrinsicContentSize" width="53" height="21"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="3NN-AX-zyT">
-            <size key="intrinsicContentSize" width="65" height="21"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="6t9-dD-yJ2">
-            <size key="intrinsicContentSize" width="47" height="21"/>
+            <size key="intrinsicContentSize" width="125" height="41.637671874999995"/>
         </designable>
         <designable name="71Y-ja-pzy">
-            <size key="intrinsicContentSize" width="156" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="7wi-7Z-5S1">
-            <size key="intrinsicContentSize" width="58.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="8si-2t-WUt">
-            <size key="intrinsicContentSize" width="148" height="20"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="9vw-NB-by2">
-            <size key="intrinsicContentSize" width="34" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="E3Z-pB-10j">
-            <size key="intrinsicContentSize" width="164.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="EzQ-rE-PXy">
-            <size key="intrinsicContentSize" width="115.5" height="20"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="IQr-Wo-dbh">
-            <size key="intrinsicContentSize" width="68" height="21"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
-        <designable name="KhN-No-Chw"/>
+        <designable name="KhN-No-Chw">
+            <size key="intrinsicContentSize" width="10" height="10"/>
+        </designable>
         <designable name="N7W-Jb-Mqz">
-            <size key="intrinsicContentSize" width="28" height="21"/>
+            <size key="intrinsicContentSize" width="284" height="41.637671874999995"/>
         </designable>
         <designable name="NjG-kL-7h1">
-            <size key="intrinsicContentSize" width="65" height="21"/>
+            <size key="intrinsicContentSize" width="250" height="41.637671874999995"/>
         </designable>
         <designable name="OB3-KE-LXw">
-            <size key="intrinsicContentSize" width="35.5" height="21"/>
+            <size key="intrinsicContentSize" width="268" height="41.637671874999995"/>
         </designable>
         <designable name="OHz-qc-xGq">
-            <size key="intrinsicContentSize" width="81" height="21"/>
+            <size key="intrinsicContentSize" width="128" height="41.637671874999995"/>
         </designable>
         <designable name="Olx-VE-55Z">
-            <size key="intrinsicContentSize" width="68" height="21"/>
+            <size key="intrinsicContentSize" width="250" height="41.637671874999995"/>
         </designable>
         <designable name="Q5P-LV-1Gk">
-            <size key="intrinsicContentSize" width="87" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
-        <designable name="Ry6-kL-v2i"/>
+        <designable name="Ry6-kL-v2i">
+            <size key="intrinsicContentSize" width="10" height="10"/>
+        </designable>
         <designable name="Spi-UG-U2L">
-            <size key="intrinsicContentSize" width="166.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="Sy7-bU-YZU">
-            <size key="intrinsicContentSize" width="115.5" height="20"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="XSi-nd-dua">
-            <size key="intrinsicContentSize" width="63.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="aJ3-Nm-uCL">
-            <size key="intrinsicContentSize" width="94" height="20"/>
+            <size key="intrinsicContentSize" width="284" height="41.637671874999995"/>
         </designable>
         <designable name="cC4-tT-uPo">
-            <size key="intrinsicContentSize" width="63.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
         <designable name="eE5-0J-hHk">
-            <size key="intrinsicContentSize" width="39" height="21"/>
+            <size key="intrinsicContentSize" width="268" height="41.637671874999995"/>
         </designable>
         <designable name="jih-Av-AbH">
-            <size key="intrinsicContentSize" width="28" height="21"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="kWF-77-Tr5">
-            <size key="intrinsicContentSize" width="129" height="20"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="ozi-Za-qGg">
-            <size key="intrinsicContentSize" width="51.5" height="21"/>
+            <size key="intrinsicContentSize" width="250" height="41.637671874999995"/>
         </designable>
         <designable name="tI9-g7-fqO">
-            <size key="intrinsicContentSize" width="51.5" height="21"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="tlF-8R-5w0">
-            <size key="intrinsicContentSize" width="129" height="20"/>
+            <size key="intrinsicContentSize" width="281" height="41.637671874999995"/>
         </designable>
         <designable name="v9p-hj-xkh">
-            <size key="intrinsicContentSize" width="66" height="18.5"/>
+            <size key="intrinsicContentSize" width="244" height="39.220703125"/>
         </designable>
         <designable name="vT4-i4-i9p">
-            <size key="intrinsicContentSize" width="53" height="21"/>
+            <size key="intrinsicContentSize" width="250" height="41.637671874999995"/>
         </designable>
         <designable name="vg3-PJ-2kP">
-            <size key="intrinsicContentSize" width="73" height="21"/>
+            <size key="intrinsicContentSize" width="268" height="41.637671874999995"/>
         </designable>
         <designable name="zdG-yH-aFI">
-            <size key="intrinsicContentSize" width="72.5" height="21"/>
+            <size key="intrinsicContentSize" width="273" height="41.637671874999995"/>
         </designable>
     </designables>
     <resources>

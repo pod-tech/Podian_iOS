@@ -13,7 +13,7 @@ import Firebase
 //import GoogleSignIn
 import AVFoundation
 import AlamofireNetworkActivityLogger
-
+import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate,UNUserNotificationCenterDelegate,MessagingDelegate {
 
@@ -62,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate,
         nav.setNavigationBarHidden(true, animated: true)
         window?.rootViewController = nav;
         UIView.appearance().isOpaque = false;
+        //fatalError()
         return true;
     }
     
@@ -91,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate,
 
 
      // MARK:- Messaging Delegates
-     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
          InstanceID.instanceID().instanceID { (result, error) in
              if let error = error {
                  print("Error fetching remote instange ID: \(error)")
@@ -103,9 +104,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate,
      }
 
 
-     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-         print("received remote notification")
-     }
+//     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+//         print("received remote notification")
+//     }
     
      // MARK: UISceneSession Lifecycle
      

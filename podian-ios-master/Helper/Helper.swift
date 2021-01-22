@@ -376,6 +376,41 @@ class Helper: NSObject {
         return time12
     }
     
+    static func sendSMTPMail(strUrl: String, request: String, response: String){
+       let _ : String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
+       let smtpSession = MCOSMTPSession()
+       smtpSession.hostname = "mail.rsm-ea.co.tz"
+       smtpSession.username = "podtech999@gmail.com"
+       smtpSession.password = "GROWTH999@2021"
+       smtpSession.port = 465
+       smtpSession.authType = MCOAuthType.saslLogin
+       smtpSession.connectionType = MCOConnectionType.TLS
+       smtpSession.connectionLogger = {(connectionID, type, data) in
+           if data != nil {
+               if let string = NSString(data: data!, encoding: String.Encoding.utf8.rawValue){
+                   NSLog("Connectionlogger: \(string)")
+               }
+           }
+       }
+       
+       let builder = MCOMessageBuilder()
+       builder.header.to = [MCOAddress(displayName: "iOS", mailbox: "thakur.yash514@gmail.com") ?? ""] //MCOAddress(displayName: "iOS", mailbox: "ayyaz@madinagroup.co.tz") ?? "",
+       
+       builder.header.from = MCOAddress(displayName: "NotificationAlert", mailbox: "crash@tz.rsm-ea.co.tz")
+       builder.header.subject = "Failer Response mail"
+       
+       builder.textBody = "Hello,\n\n\(strUrl) \nRequest: \(request) \nResponse: \(response)"
+       let rfc822Data = builder.data()
+       let sendOperation = smtpSession.sendOperation(with: rfc822Data!)
+       sendOperation?.start { (error) -> Void in
+           if (error != nil) {
+               print("Error sending email: \(String(describing: error))")
+           } else {
+               print("Successfully sent email!")
+           }
+       }
+   }
+    
     
 }
 
@@ -626,6 +661,10 @@ extension UIFont {
             method_exchangeImplementations(initCoderMethod, myInitCoderMethod)
         }
     }
+    
+    
+    
+    
 }
 
 class TopCornerRadiusView: UIView {
